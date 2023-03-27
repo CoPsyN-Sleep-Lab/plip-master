@@ -1,0 +1,63 @@
+{
+    "gonogo": {
+        "volumes": 151,
+        "dummy_scans": 3,
+        "is_mb": 0,
+        "tr": 2.0,
+        "onsets": {
+            "Go": 180,
+            "NoGo": 60
+        }
+    },
+    "conscious": {
+        "volumes": 151,
+        "dummy_scans": 3,
+        "is_mb": 0,
+        "tr": 2.0,
+        "onsets": {
+            "Anger": 5,
+            "Disgust": 5,
+            "Fear": 5,
+            "Happy": 5,
+            "Neutral": 5,
+            "Sad": 5
+        }
+    },
+    "nonconscious": {
+        "volumes": 151,
+        "dummy_scans": 3,
+        "is_mb": 0,
+        "tr": 2.0,
+        "onsets": {
+            "Anger": 5,
+            "Disgust": 5,
+            "Fear": 5,
+            "Happy": 5,
+            "Neutral": 5,
+            "Sad": 5
+        }
+    },
+    "nback": {
+        "volumes": 151,
+        "dummy_scans": 3,
+        "is_mb": 0,
+        "tr": 2.0,
+        "onsets": {}
+    },
+    "mid_singleblock": {
+        "volumes": -1,
+        "dummy_scans": -2,
+        "is_mb": 0,
+        "tr": 2.0,
+        "onsets": {
+            "win_5_anticipation": 15,
+            "win_0_anticipation": 15,
+            "lose_5_anticipation": 15,
+            "lose_0_anticipation": 15,
+            "win_5_consumption": 15,
+            "win_0_consumption": 15,
+            "lose_5_consumption": 15,
+            "lose_0_consumption": 15
+        }
+    }
+}

@@ -1,0 +1,3060 @@
+{
+  "anhedonia_circuit": {
+    "task": "conscious",
+    "contrast": "happy_vs_neutral",
+    "act": [
+      {
+        "component": "425361_Right_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "610265_Left_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "813070_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "586931_Right_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "001716_Left_vStriatum",
+        "weight": 1.0
+      },
+      {
+        "component": "182355_Left_mOFC",
+        "weight": 1.0
+      },
+      {
+        "component": "530177_Right_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "082100_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "003590_Right_dlPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "347346_Left_dlPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "530039_Left_SPL",
+        "weight": 1.0
+      },
+      {
+        "component": "762258_Left_posInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "101946_Right_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "877949_Right_vStriatum",
+        "weight": 1.0
+      },
+      {
+        "component": "990992_Left_preMotor",
+        "weight": 1.0
+      },
+      {
+        "component": "361803_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "933241_Right_dlPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "643945_Left_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "986594_Right_Putamen",
+        "weight": 1.0
+      },
+      {
+        "component": "946936_Right_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "767361_Left_lPFC",
+        "weight": 1.0
+      }
+    ],
+    "ppi": [
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "425361_Right_antInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "610265_Left_Amygdala"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "813070_Left_antInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "586931_Right_dmPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "182355_Left_mOFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "530177_Right_PCC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "082100_Right_dACC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "003590_Right_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "347346_Left_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "530039_Left_SPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "762258_Left_posInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "101946_Right_aIPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "877949_Right_vStriatum"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "990992_Left_preMotor"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "361803_Left_aIPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "933241_Right_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "643945_Left_precuneus"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "986594_Right_Putamen"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "946936_Right_Hippocampus"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "001716_Left_vStriatum",
+          "767361_Left_lPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "425361_Right_antInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "610265_Left_Amygdala"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "813070_Left_antInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "586931_Right_dmPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "001716_Left_vStriatum"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "530177_Right_PCC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "082100_Right_dACC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "003590_Right_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "347346_Left_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "530039_Left_SPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "762258_Left_posInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "101946_Right_aIPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "877949_Right_vStriatum"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "990992_Left_preMotor"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "361803_Left_aIPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "933241_Right_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "643945_Left_precuneus"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "986594_Right_Putamen"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "946936_Right_Hippocampus"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "182355_Left_mOFC",
+          "767361_Left_lPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "425361_Right_antInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "610265_Left_Amygdala"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "813070_Left_antInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "586931_Right_dmPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "001716_Left_vStriatum"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "182355_Left_mOFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "530177_Right_PCC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "082100_Right_dACC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "003590_Right_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "347346_Left_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "530039_Left_SPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "762258_Left_posInsula"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "101946_Right_aIPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "990992_Left_preMotor"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "361803_Left_aIPL"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "933241_Right_dlPFC"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "643945_Left_precuneus"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "986594_Right_Putamen"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "946936_Right_Hippocampus"
+        ],
+        "weight": 0.05
+      },
+      {
+        "component": [
+          "877949_Right_vStriatum",
+          "767361_Left_lPFC"
+        ],
+        "weight": 0.05
+      }
+    ]
+  },
+  "anxious_avoidance_circuit": {
+    "task": "ic",
+    "ic": [
+      {
+        "component": "954861_Right_antInsula-to-477522_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "954861_Right_antInsula-to-713041_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "954861_Right_antInsula-to-364070_Left_Thalamus",
+        "weight": 1.0
+      },
+      {
+        "component": "954861_Right_antInsula-to-447647_Left_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "954861_Right_antInsula-to-450767_Right_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "477522_Left_antInsula-to-173570_Left_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "477522_Left_antInsula-to-364070_Left_Thalamus",
+        "weight": 1.0
+      },
+      {
+        "component": "477522_Left_antInsula-to-447647_Left_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "477522_Left_antInsula-to-450767_Right_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "713041_Right_dACC-to-477522_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "713041_Right_dACC-to-173570_Left_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "713041_Right_dACC-to-364070_Left_Thalamus",
+        "weight": 1.0
+      },
+      {
+        "component": "713041_Right_dACC-to-447647_Left_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "713041_Right_dACC-to-450767_Right_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "450767_Right_Amygdala-to-364070_Left_Thalamus",
+        "weight": 1.0
+      },
+      {
+        "component": "450767_Right_Amygdala-to-447647_Left_Amygdala",
+        "weight": 1.0
+      }
+    ]
+  },
+  "cog_dyscontrol_circuit": {
+    "task": "gonogo",
+    "contrast": "nogo_vs_go",
+    "act": [
+      {
+        "component": "268855_Right_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "875045_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "013136_Left_dlPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "291082_Bilat_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "033459_Right_precentral",
+        "weight": 1.0
+      },
+      {
+        "component": "460177_Left_dParietal",
+        "weight": 1.0
+      },
+      {
+        "component": "012648_Right_dParietal",
+        "weight": 1.0
+      },
+      {
+        "component": "232722_Right_MidCing",
+        "weight": 1.0
+      },
+      {
+        "component": "533294_Right_dlPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "057875_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "595203_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "708468_Left_Precentral",
+        "weight": 1.0
+      },
+      {
+        "component": "136840_Right_SPL",
+        "weight": 1.0
+      },
+      {
+        "component": "217842_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "421599_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "865819_Left_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "092954_Right_Precentral",
+        "weight": 1.0
+      },
+      {
+        "component": "769212_Left_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "763273_Left_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "835934_Left_Fusiform",
+        "weight": 1.0
+      },
+      {
+        "component": "529490_Left_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "107915_Left_AG",
+        "weight": 1.0
+      }
+    ],
+    "ppi": [
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "268855_Right_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "875045_Left_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "013136_Left_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "291082_Bilat_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "033459_Right_precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "012648_Right_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "232722_Right_MidCing"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "533294_Right_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "057875_Left_aIPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "595203_Right_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "708468_Left_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "136840_Right_SPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "217842_Right_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "421599_Right_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "865819_Left_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "092954_Right_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "769212_Left_precuneus"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "763273_Left_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "835934_Left_Fusiform"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "529490_Left_Amygdala"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "460177_Left_dParietal",
+          "107915_Left_AG"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "268855_Right_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "875045_Left_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "013136_Left_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "291082_Bilat_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "033459_Right_precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "460177_Left_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "232722_Right_MidCing"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "533294_Right_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "057875_Left_aIPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "595203_Right_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "708468_Left_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "136840_Right_SPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "217842_Right_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "421599_Right_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "865819_Left_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "092954_Right_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "769212_Left_precuneus"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "763273_Left_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "835934_Left_Fusiform"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "529490_Left_Amygdala"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "012648_Right_dParietal",
+          "107915_Left_AG"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "268855_Right_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "875045_Left_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "291082_Bilat_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "033459_Right_precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "460177_Left_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "012648_Right_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "232722_Right_MidCing"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "533294_Right_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "057875_Left_aIPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "595203_Right_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "708468_Left_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "136840_Right_SPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "217842_Right_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "421599_Right_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "865819_Left_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "092954_Right_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "769212_Left_precuneus"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "763273_Left_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "835934_Left_Fusiform"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "529490_Left_Amygdala"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "013136_Left_dlPFC",
+          "107915_Left_AG"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "268855_Right_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "875045_Left_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "013136_Left_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "033459_Right_precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "460177_Left_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "012648_Right_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "232722_Right_MidCing"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "533294_Right_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "057875_Left_aIPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "595203_Right_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "708468_Left_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "136840_Right_SPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "217842_Right_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "421599_Right_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "865819_Left_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "092954_Right_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "769212_Left_precuneus"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "763273_Left_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "835934_Left_Fusiform"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "529490_Left_Amygdala"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "291082_Bilat_dACC",
+          "107915_Left_AG"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "268855_Right_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "875045_Left_antInsula"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "013136_Left_dlPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "291082_Bilat_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "033459_Right_precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "460177_Left_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "012648_Right_dParietal"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "232722_Right_MidCing"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "057875_Left_aIPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "595203_Right_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "708468_Left_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "136840_Right_SPL"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "217842_Right_dACC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "421599_Right_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "865819_Left_Caudate"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "092954_Right_Precentral"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "769212_Left_precuneus"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "763273_Left_lPFC"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "835934_Left_Fusiform"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "529490_Left_Amygdala"
+        ],
+        "weight": 0.047619
+      },
+      {
+        "component": [
+          "533294_Right_dlPFC",
+          "107915_Left_AG"
+        ],
+        "weight": 0.047619
+      }
+    ]
+  },
+  "conscious_threat_dysreg_circuit": {
+    "task": "conscious",
+    "contrast": "threat_vs_neutral",
+    "act": [
+      {
+        "component": "779062_Left_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "176064_Right_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "131520_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "534482_Right_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "999575_Left_Fusiform",
+        "weight": 1.0
+      },
+      {
+        "component": "671813_Right_Fusiform",
+        "weight": 1.0
+      },
+      {
+        "component": "707656_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "934018_Left_IFG",
+        "weight": 1.0
+      },
+      {
+        "component": "725177_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "206675_Right_Precentral",
+        "weight": 1.0
+      },
+      {
+        "component": "299536_Right_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "837526_Right_Supramarginal",
+        "weight": 1.0
+      },
+      {
+        "component": "426426_Left_pACC",
+        "weight": 1.0
+      },
+      {
+        "component": "911981_Right_sgACC",
+        "weight": 1.0
+      }
+    ],
+    "ppi": [
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.038462
+      }
+    ]
+  },
+  "inattention_circuit": {
+    "task": "ic",
+    "ic": [
+      {
+        "component": "660699_Right_FEF-to-532911_Left_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "660699_Right_FEF-to-638433_Right_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "660699_Right_FEF-to-216192_Right_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "660699_Right_FEF-to-275836_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "660699_Right_FEF-to-156999_Left_msPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "660699_Right_FEF-to-525931_Right_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "660699_Right_FEF-to-125909_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "532911_Left_lPFC-to-216192_Right_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "532911_Left_lPFC-to-275836_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "532911_Left_lPFC-to-525931_Right_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "532911_Left_lPFC-to-125909_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-660699_Right_FEF",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-532911_Left_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-638433_Right_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-216192_Right_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-275836_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-156999_Left_msPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-525931_Right_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "831650_Left_precuneus-to-125909_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "638433_Right_antInsula-to-532911_Left_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "638433_Right_antInsula-to-216192_Right_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "638433_Right_antInsula-to-275836_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "638433_Right_antInsula-to-156999_Left_msPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "638433_Right_antInsula-to-525931_Right_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "638433_Right_antInsula-to-125909_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "216192_Right_precuneus-to-156999_Left_msPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "216192_Right_precuneus-to-125909_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "275836_Right_lPFC-to-216192_Right_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "275836_Right_lPFC-to-156999_Left_msPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "275836_Right_lPFC-to-125909_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "156999_Left_msPFC-to-125909_Left_aIPL",
+        "weight": 1.0
+      },
+      {
+        "component": "525931_Right_aIPL-to-216192_Right_precuneus",
+        "weight": 1.0
+      },
+      {
+        "component": "525931_Right_aIPL-to-275836_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "525931_Right_aIPL-to-156999_Left_msPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "525931_Right_aIPL-to-125909_Left_aIPL",
+        "weight": 1.0
+      }
+    ]
+  },
+  "negative_bias_circuit": {
+    "task": "conscious",
+    "contrast": "sad_vs_neutral",
+    "act": [
+      {
+        "component": "779062_Left_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "176064_Right_Amygdala",
+        "weight": 1.0
+      },
+      {
+        "component": "131520_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "534482_Right_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "999575_Left_Fusiform",
+        "weight": 1.0
+      },
+      {
+        "component": "671813_Right_Fusiform",
+        "weight": 1.0
+      },
+      {
+        "component": "707656_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "934018_Left_IFG",
+        "weight": 1.0
+      },
+      {
+        "component": "725177_Right_lPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "206675_Right_Precentral",
+        "weight": 1.0
+      },
+      {
+        "component": "299536_Right_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "837526_Right_Supramarginal",
+        "weight": 1.0
+      },
+      {
+        "component": "426426_Left_pACC",
+        "weight": 1.0
+      },
+      {
+        "component": "911981_Right_sgACC",
+        "weight": 1.0
+      }
+    ],
+    "ppi": [
+      {
+        "component": [
+          "426426_Left_pACC",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "426426_Left_pACC",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "707656_Left_antInsula",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.076923
+      },
+      {
+        "component": [
+          "534482_Right_antInsula",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.076923
+      }
+    ]
+  },
+  "nonconscious_threat_dysreg_circuit": {
+    "task": "nonconscious",
+    "contrast": "threat_vs_neutral",
+    "ppi": [
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "176064_Right_Amygdala",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.04
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "779062_Left_Amygdala",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "131520_Right_dACC"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "911981_Right_sgACC",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.083333
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "779062_Left_Amygdala"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "176064_Right_Amygdala"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "534482_Right_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "999575_Left_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "671813_Right_Fusiform"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "707656_Left_antInsula"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "934018_Left_IFG"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "725177_Right_lPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "206675_Right_Precentral"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "299536_Right_dmPFC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "837526_Right_Supramarginal"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "426426_Left_pACC"
+        ],
+        "weight": 0.038462
+      },
+      {
+        "component": [
+          "131520_Right_dACC",
+          "911981_Right_sgACC"
+        ],
+        "weight": 0.038462
+      }
+    ]
+  },
+  "rumination_circuit": {
+    "task": "ic",
+    "ic": [
+      {
+        "component": "073720_Bilat_PCC-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-752691_Left_amPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-760709_Left_MidTemp",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-490498_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-381654_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-662510_Left_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-529513_Right_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-609795_Right_mdThal",
+        "weight": 1.0
+      },
+      {
+        "component": "791103_Left_AG-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-490498_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-381654_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-662510_Left_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-529513_Right_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-609795_Right_mdThal",
+        "weight": 1.0
+      },
+      {
+        "component": "752691_Left_amPFC-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "414207_Right_AG-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "414207_Right_AG-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "414207_Right_AG-to-381654_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "414207_Right_AG-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-752691_Left_amPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-490498_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-381654_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-662510_Left_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-529513_Right_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-609795_Right_mdThal",
+        "weight": 1.0
+      },
+      {
+        "component": "760709_Left_MidTemp-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-791103_Left_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-752691_Left_amPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-760709_Left_MidTemp",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-662510_Left_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-529513_Right_Hippocampus",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-609795_Right_mdThal",
+        "weight": 1.0
+      },
+      {
+        "component": "947147_Right_antInsula-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "490498_Left_antInsula-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "490498_Left_antInsula-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "490498_Left_antInsula-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "490498_Left_antInsula-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "381654_Right_dACC-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "381654_Right_dACC-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "381654_Right_dACC-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "662510_Left_Hippocampus-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "662510_Left_Hippocampus-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "662510_Left_Hippocampus-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "662510_Left_Hippocampus-to-490498_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "662510_Left_Hippocampus-to-381654_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "662510_Left_Hippocampus-to-609795_Right_mdThal",
+        "weight": 1.0
+      },
+      {
+        "component": "662510_Left_Hippocampus-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "529513_Right_Hippocampus-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "529513_Right_Hippocampus-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "529513_Right_Hippocampus-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "529513_Right_Hippocampus-to-490498_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "529513_Right_Hippocampus-to-131462_Right_Caudate",
+        "weight": 1.0
+      },
+      {
+        "component": "609795_Right_mdThal-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "609795_Right_mdThal-to-414207_Right_AG",
+        "weight": 1.0
+      },
+      {
+        "component": "609795_Right_mdThal-to-042640_Left_dmPFC",
+        "weight": 1.0
+      },
+      {
+        "component": "609795_Right_mdThal-to-490498_Left_antInsula",
+        "weight": 1.0
+      },
+      {
+        "component": "609795_Right_mdThal-to-381654_Right_dACC",
+        "weight": 1.0
+      },
+      {
+        "component": "131462_Right_Caudate-to-073720_Bilat_PCC",
+        "weight": 1.0
+      },
+      {
+        "component": "131462_Right_Caudate-to-042640_Left_dmPFC",
+        "weight": 1.0
+      }
+    ]
+  }
+}

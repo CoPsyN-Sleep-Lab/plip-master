@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+set -e
+plip_root=$1
+shift
+spm_path=$1
+shift
+matlab_function=$1
+shift
+arg_str="'$1'"
+shift
+args=$@
+
+MATLAB_DIR=/Applications/MATLAB_R2014b.app/bin
+
+FSLDIR=/usr/local/fsl/
+. ${FSLDIR}/etc/fslconf/fsl.sh
+PATH=${FSLDIR}/bin:${PATH}
+export PATH
+
+for arg in $args; do
+    arg_str="$arg_str, '$arg'"
+done
+
+echo "Running $matlab_function($arg_str)"
+exec $MATLAB_DIR/matlab -r "addpath(genpath('$plip_root')); addpath(genpath('$spm_path')); try $matlab_function($arg_str); catch ME; disp(ME.message); end; quit"

@@ -1,0 +1,18 @@
+{
+    "root": "/path/to/root/here",
+    "subject_list": "/path/to/subject/list/here.csv",
+    "sessions": ["s1"],
+    "smooth_param": 8,
+    "dof": 12,
+    "t1_type": ["T1w_MPRAGE_PROMO"],
+    "spm_path": "/share/leanew1/pstetz/git/plip/library/spm8",
+    "mask_dir": "/share/leanew1/PANLab_Datasets/Masks/plip",
+    "tasks": ["gonogo", "conscious", "nonconscious"],
+    "ic_tasks": ["gonogo", "conscious", "nonconscious"],
+    "standardization": "/share/leanew1/Standardization/connhc_n50_dof6.csv",
+    "environment": {
+        "FSL_IN_DOCKER_SIMG": "/share/leanew1/engineering_sandbox/containers/fsl_in_docker.simg",
+        "MATLAB_DIR": "/share/software/MATLAB-R2014b/bin",
+        "FSLDIR": "/usr/share/fsl/5.0"
+    }
+}

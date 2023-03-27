@@ -1,0 +1,97 @@
+{
+   "negative_bias": {
+      "task": "conscious",
+      "contrast": "sad_vs_neutral",
+      "ppi": [
+         {"component": ["779062_Left_Amygdala", "426426_Left_pACC"], "weight": 1},
+         {"component": ["176064_Right_Amygdala", "426426_Left_pACC"], "weight": 1},
+         {"component": ["707656_Left_antInsula", "426426_Left_pACC"], "weight": -1},
+         {"component": ["534482_Right_antInsula", "426426_Left_pACC"], "weight": -1}
+      ],
+      "act": [
+         {"component": "779062_Left_Amygdala", "weight": 1},
+         {"component": "176064_Right_Amygdala", "weight": 1},
+         {"component": "707656_Left_antInsula", "weight": 1},
+         {"component": "534482_Right_antInsula", "weight": 1},
+         {"component": "426426_Left_pACC", "weight": 1}
+      ]
+   },
+   "rumination": {
+      "task": "ic",
+      "ic": [
+         {"component": "791103_Left_AG-to-752691_Left_amPFC", "weight": 1},
+         {"component": "752691_Left_amPFC-to-414207_Right_AG", "weight": 1},
+         {"component": "752691_Left_amPFC-to-073720_Bilat_PCC", "weight": 1},
+         {"component": "791103_Left_AG-to-073720_Bilat_PCC", "weight": 1},
+         {"component": "414207_Right_AG-to-073720_Bilat_PCC", "weight": 1}
+      ]
+   },
+   "anxious_avoidance": {
+      "task": "ic",
+      "ic": [
+         {"component": "477522_Left_antInsula-to-447647_Left_Amygdala", "weight": -1},
+         {"component": "954861_Right_antInsula-to-450767_Right_Amygdala", "weight": -1},
+         {"component": "477522_Left_antInsula-to-954861_Right_antInsula", "weight": -1}
+      ]
+   },
+   "conscious_threat_dysreg": {
+      "task": "conscious",
+      "contrast": "threat_vs_neutral",
+      "act": [
+         {"component": "779062_Left_Amygdala", "weight": 1},
+         {"component": "176064_Right_Amygdala", "weight": 1},
+         {"component": "131520_Right_dACC", "weight": -1}
+      ],
+      "ppi": [
+         {"component": ["779062_Left_Amygdala", "131520_Right_dACC"], "weight": -1},
+         {"component": ["176064_Right_Amygdala", "131520_Right_dACC"], "weight": -1}
+      ]
+   },
+   "nonconscious_threat_dysreg": {
+      "task": "nonconscious",
+      "contrast": "threat_vs_neutral",
+      "act": [
+         {"component": "779062_Left_Amygdala", "weight": 1},
+         {"component": "176064_Right_Amygdala", "weight": 1},
+         {"component": "911981_Right_sgACC", "weight": -1}
+      ],
+      "ppi": [
+         {"component": ["779062_Left_Amygdala", "911981_Right_sgACC"], "weight": -1},
+         {"component": ["176064_Right_Amygdala", "911981_Right_sgACC"], "weight": -1}
+      ]
+   },
+   "anhedonia": {
+      "task": "conscious",
+      "contrast": "happy_vs_neutral",
+      "act": [
+         {"component": "001716_Left_vStriatum", "weight": -1},
+         {"component": "877949_Right_vStriatum", "weight": -1},
+         {"component": "182355_Left_mOFC", "weight": -1}
+      ]
+   },
+   "cog_dyscontrol": {
+      "task": "gonogo",
+      "contrast": "nogo_vs_go",
+      "act": [
+         {"component": "013136_Left_dlPFC", "weight": -1},
+         {"component": "533294_Right_dlPFC", "weight": -1},
+         {"component": "291082_Bilat_dACC", "weight": -1}
+      ],
+      "ppi": [
+         {"component": ["013136_Left_dlPFC", "291082_Bilat_dACC"], "weight": -1},
+         {"component": ["533294_Right_dlPFC", "291082_Bilat_dACC"], "weight": -1}
+      ]
+   },
+   "inattention": {
+      "task": "ic",
+      "ic": [
+         {"component": "532911_Left_lPFC-to-156999_Left_msPFC", "weight": -1},
+         {"component": "275836_Right_lPFC-to-156999_Left_msPFC", "weight": -1},
+         {"component": "125909_Left_aIPL-to-532911_Left_lPFC", "weight": -1},
+         {"component": "525931_Right_aIPL-to-275836_Right_lPFC", "weight": -1},
+         {"component": "125909_Left_aIPL-to-831650_Left_precuneus", "weight": -1},
+         {"component": "525931_Right_aIPL-to-216192_Right_precuneus", "weight": -1}
+      ]
+   }
+}
+

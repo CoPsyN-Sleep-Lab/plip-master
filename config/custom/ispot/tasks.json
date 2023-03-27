@@ -1,0 +1,61 @@
+{
+    "gonogo": {
+        "volumes": 120,
+        "dummy_scans": 0,
+        "is_mb": 0,
+        "tr": 2.5,
+        "onsets": {
+            "Go": 180,
+            "NoGo": 60
+        }
+    },
+    "oddball": {
+        "volumes": 120,
+        "dummy_scans": 0,
+        "is_mb": 0,
+        "tr": 2.5,
+        "onsets": {
+            "Background": 100,
+            "Target": 20
+        }
+    },
+    "conscious": {
+        "volumes": 120,
+        "dummy_scans": 0,
+        "is_mb": 0,
+        "tr": 2.5,
+        "onsets": {
+            "Anger": 5,
+            "Disgust": 5,
+            "Fear": 5,
+            "Happy": 5,
+            "Neutral": 5,
+            "Sad": 5
+        }
+    },
+    "workingmemory": {
+        "volumes": 120,
+        "dummy_scans": 0,
+        "is_mb": 0,
+        "tr": 2.5,
+        "onsets": {
+            "Baseline": 40,
+            "NonTarget": 50,
+            "Target": 30
+        }
+    },
+    "nonconscious": {
+        "volumes": 120,
+        "dummy_scans": 0,
+        "is_mb": 0,
+        "tr": 2.5,
+        "onsets": {
+            "Anger": 5,
+            "Disgust": 5,
+            "Fear": 5,
+            "Happy": 5,
+            "Neutral": 5,
+            "Sad": 5
+        }
+    }
+}

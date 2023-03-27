@@ -1,0 +1,11 @@
+include plip/utils/run_matlab
+recursive-include plip *.m
+include plip/data/AAL_wmMask.nii
+include plip/data/MNI152_T1_2mm_brain_mask.nii
+include plip/data/mni_bet_1mm_mask.nii
+include plip/data/white_0.9_csf_0.5_mask.nii.gz
+include plip/preproc/anat/config/T1_2_MNI152_2mm.cnf
+include plip/preproc/anat/config/T1_2_MNI152_level2.cnf
+include plip/preproc/anat/config/T1_2_MNI152_level3.cnf
+include versioneer.py
+include plip/_version.py
