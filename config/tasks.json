@@ -59,5 +59,32 @@
             "lose_5_consumption": 15,
             "lose_0_consumption": 15
         }
+    },
+    "emoreg": {
+        "volumes": 397,
+        "dummy_scans": 3,
+        "is_mb": 0,
+        "tr": 2.0,
+        "onsets": {
+            "Look_Negative": 14,
+            "Look_Neutral": 14,
+            "Decrease_Negative": 14
+        }
+    },
+    "emocon": {
+        "volumes": 394,
+        "dummy_scans": 3,
+        "is_mb": 0,
+        "tr": 2.0,
+        "onsets": {
+            "CC": 1,
+            "CI": 1,
+            "fixation": 1,
+            "IC": 1,
+            "II": 1,
+            "KeyPress_Onsets": 1,
+            "Left_Onsets": 1,
+            "Right_Onsets": 1
+        }
     }
 }

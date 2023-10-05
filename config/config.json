@@ -1,14 +1,14 @@
 {
-    "root": "/users/adamkrause/TIRED/derivatives/TIRED-plip",
-    "standard": "/Users/adamkrause/TIRED/derivatives/TIRED-plip/processed/config/",
-    "subject_list": "/users/adamkrause/TIRED/derivatives/TIRED-plip/subject_list.csv",
+    "root": "/users/copsynsleeplab/Desktop/TIRED-plip/",
+    "standard": "/users/copsynsleeplab/Desktop/TIRED-plip/processed/config/",
+    "subject_list": "/users/copsynsleeplab/Desktop/TIRED-plip/subject_list.csv",
     "sessions": ["BL", "ETX"],
     "smooth_param": 6,
     "dof": 12,
     "t1_type": ["T1w_1mm"],
-    "spm_path": "/users/adamkrause/plip-master/plip/library/spm8",
-    "mask_dir": "/users/adamkrause/plip-master/masks/plip",
-    "tasks": ["conscious", "nonconscious", "gonogo"],
-    "ic_tasks": ["conscious", "nonconscious", "gonogo"],
+    "spm_path": "/users/copsynsleeplab/plip-master/plip/library/spm12/",
+    "mask_dir": "/users/copsynsleeplab/plip-master/masks/plip/",
+    "tasks": ["conscious", "nonconscious", "gonogo", "emocon", "emoreg"],
+    "ic_tasks": ["conscious", "nonconscious", "gonogo", "emocon", "emoreg"],
     "standardization": "/share/leanew1/Standardization/connhc_n50_dof6.csv"
 }

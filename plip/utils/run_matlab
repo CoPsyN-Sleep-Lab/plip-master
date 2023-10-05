@@ -10,9 +10,10 @@ arg_str="'$1'"
 shift
 args=$@
 
-MATLAB_DIR=/Applications/MATLAB_R2014b.app/bin
+#MATLAB_DIR=/Applications/MATLAB_R2022b.app/bin
+MATLAB_DIR=/Applications/MATLAB_R2022b.app/bin
 
-FSLDIR=/usr/local/fsl/
+FSLDIR=/Users/copsynsleeplab/fsl/
 . ${FSLDIR}/etc/fslconf/fsl.sh
 PATH=${FSLDIR}/bin:${PATH}
 export PATH

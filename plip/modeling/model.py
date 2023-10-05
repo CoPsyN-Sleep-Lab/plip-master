@@ -12,17 +12,30 @@ from plip.utils.fsl_in_docker import fsl_in_docker
 
 
 def modeling(model_dir, task, filename, TR, config):
-    jobfile = PLIP_ROOT / "modeling" / "tasks" / task / f"stats_{task}.m"
-    # HACK: I think ,1 is needed for SPM
-    brain_mask = model_dir / "modeling_mask.nii,1"
-    run_matlab(config, "ppi_stats",
-               jobfile, brain_mask, model_dir, filename, TR)
+    # if there was no button responses, don't model them so use the NoButton job files.
+    if task in ['emocon', 'emoreg'] and not os.path.isfile(os.path.join(model_dir,'KeyPress_Onsets.csv')):
+        jobfile = PLIP_ROOT / "modeling" / "tasks" / task / f"statsNoButton_{task}.m"
+        # HACK: I think ,1 is needed for SPM
+        brain_mask = model_dir / "modeling_mask.nii,1"
+        run_matlab(config, "ppi_stats",
+                   jobfile, brain_mask, model_dir, filename, TR)
 
-    jobfile = PLIP_ROOT / "modeling" / "estimate_job.m"
-    run_matlab(config, "ppi_estimate", jobfile, model_dir)
+        jobfile = PLIP_ROOT / "modeling" / "estimate_job.m"
+        run_matlab(config, "ppi_estimate", jobfile, model_dir)
+        jobfile = PLIP_ROOT / "modeling" / "tasks" / task / f"contrastsNoButton_{task}.m"
+        run_matlab(config, "ppi_contrast", jobfile, model_dir)
+    else:
+        jobfile = PLIP_ROOT / "modeling" / "tasks" / task / f"stats_{task}.m"
+        # HACK: I think ,1 is needed for SPM
+        brain_mask = model_dir / "modeling_mask.nii,1"
+        run_matlab(config, "ppi_stats",
+                   jobfile, brain_mask, model_dir, filename, TR)
 
-    jobfile = PLIP_ROOT / "modeling" / "tasks" / task / f"contrasts_{task}.m"
-    run_matlab(config, "ppi_contrast", jobfile, model_dir)
+        jobfile = PLIP_ROOT / "modeling" / "estimate_job.m"
+        run_matlab(config, "ppi_estimate", jobfile, model_dir)
+        ## button check here for contrasts_*.m
+        jobfile = PLIP_ROOT / "modeling" / "tasks" / task / f"contrasts_{task}.m"
+        run_matlab(config, "ppi_contrast", jobfile, model_dir)
 
 
 def convert_to_mni(task_dir, model_dir, anat_dir):

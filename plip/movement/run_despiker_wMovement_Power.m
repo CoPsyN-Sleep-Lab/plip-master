@@ -1,5 +1,5 @@
 function [vols, spike_regressors] = run_despiker(P)
-% Runs despiker on given directory
+% Runs despiker on given directory [P is a list of directories from spm_select of the volumes of the .nii]
 %E dited 2/25/16 to fix issue with last volume being included in regressor
 % bot not actually regressed out.s
 dirn = pwd;

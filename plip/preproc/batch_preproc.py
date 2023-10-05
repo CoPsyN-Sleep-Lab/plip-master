@@ -16,6 +16,7 @@ def preproc(config_dir, session, subject):
     tasks = config_get(config, "tasks")
 
     subject_logger(root, session, subject, "preproc")
+    # ajk-may skip anatomical preproc in future.
     try:
         anat_preproc(config_dir, session, subject)
     except Exception:
@@ -39,11 +40,18 @@ def anat_preproc(config_dir, session, subject):
 
 
 def func_preproc(config_dir, session, subject, task):
-    func_general(config_dir, session, subject, task)
-    func_activation(config_dir, session, subject, task)
-    func_connectivity(config_dir, session, subject, task)
-    func_model(config_dir, session, subject, task, "activation",
-               "05a_smooth.nii")
+    # ajk-edit skipping realign, *tsdiffana*, generate_mask
+    #func_general(config_dir, session, subject, task)
+
+    ## ajk-edit. may be able to skip activation as it's the same as connectivity
+    ## but connectivity also does PPI.
+    #func_activation(config_dir, session, subject, task)
+
+    ## ajk-edit. skip this - does preproc for connectivity pipeline
+    #func_connectivity(config_dir, session, subject, task)
+
+    ## ajk-edit. can skip this if not doing activation(?)
+    #func_model(config_dir, session, subject, task, "activation","05a_smooth.nii")
     func_model(config_dir, session, subject, task, "connectivity",
                "05b_smooth.nii")
 

@@ -22,11 +22,11 @@ matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).duration = 0;
 matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).tmod = 0;
 matlabbatch{1}.spm.stats.fmri_spec.sess.cond(2).pmod = struct('name', {}, 'param', {}, 'poly', {});
 
-load('spike_regressors_wFD.mat');
+load('confounds_filtered.mat');
 
-dlmwrite('spikes_FD_only_regressors.txt', [spike_regressors]);
-if ~isempty(spike_regressors)
-    matlabbatch{1}.spm.stats.fmri_spec.sess.multi_reg = {fullfile(pwd, 'spikes_FD_only_regressors.txt')};
+dlmwrite('confounds_filtered.txt', [data]);
+if ~isempty(data)
+    matlabbatch{1}.spm.stats.fmri_spec.sess.multi_reg = {fullfile(pwd, 'confounds_filtered.txt')};
 else
     matlabbatch{1}.spm.stats.fmri_spec.sess.multi = {''};
     matlabbatch{1}.spm.stats.fmri_spec.sess.regress = struct('name', {}, 'val', {});
@@ -39,4 +39,3 @@ matlabbatch{1}.spm.stats.fmri_spec.volt = 1;
 matlabbatch{1}.spm.stats.fmri_spec.global = 'None';
 matlabbatch{1}.spm.stats.fmri_spec.mask = '<UNDEFINED>';
 matlabbatch{1}.spm.stats.fmri_spec.cvi = 'AR(1)';
-

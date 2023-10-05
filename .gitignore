@@ -1,0 +1,7 @@
+.DS_Store
+__pycache__/
+.circleci/
+DEBUG_LOG.txt
+.ipynb
+.ipynb_checkpoints/
+test/

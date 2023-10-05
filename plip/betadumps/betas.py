@@ -11,45 +11,71 @@ from plip.utils.mri import find_image
 from plip.utils.fsl_commands import fsl_command
 
 
-def batch_act_betadump(root, sessions, subjects, models, masks):
+# def batch_act_betadump(root, sessions, subjects, models, masks):
+#     for session in sessions:
+#         dst_dir = paths.dump_path(root) / "cache_activation" / session
+#         for i, row in models.iterrows():
+#             task = row["task"]
+#             filename = row["filename"]
+#             contrast = row["contrast"]
+#             act_dir = paths.task_path(root, session, "%s", task,
+#                                       folder="activation")
+#             model_dir = paths.model_path(act_dir)
+#             template_path = model_dir / filename
+#
+#             model_name = f"{task}-{contrast.lower()}"
+#             dst = dst_dir / model_name / "{subject}.csv"
+#             print("Gathering Activation betas for %s" % model_name)
+#             plipos.makedirs(dst.parent)
+#             for subject in tqdm(subjects):
+#                 betadump(root, session, subject, template_path, masks, dst)
+#         merge_act(dst_dir, paths.dump_path(root) / f"activation_{session}.csv")
+
+def batch_con_betadump(root, sessions, subjects, models, masks):
     for session in sessions:
-        dst_dir = paths.dump_path(root) / "cache_activation" / session
+        dst_dir = paths.dump_path(root) / "cache_connectivity" / session
         for i, row in models.iterrows():
             task = row["task"]
-            filename = row["filename"]
+            filename = row["filename"].replace("mni_", "")
             contrast = row["contrast"]
             act_dir = paths.task_path(root, session, "%s", task,
-                                      folder="activation")
+                                      folder="connectivity")
             model_dir = paths.model_path(act_dir)
             template_path = model_dir / filename
 
             model_name = f"{task}-{contrast.lower()}"
             dst = dst_dir / model_name / "{subject}.csv"
-            print("Gathering Activation betas for %s" % model_name)
+            print("Gathering Connectivity betas for %s" % model_name)
             plipos.makedirs(dst.parent)
             for subject in tqdm(subjects):
                 betadump(root, session, subject, template_path, masks, dst)
-        merge_act(dst_dir, paths.dump_path(root) / f"activation_{session}.csv")
+        merge_act(dst_dir, paths.dump_path(root) / f"connectivity_{session}.csv")
 
 
 def merge_act(dst_dir, dst):
+    import warnings
+    warnings.filterwarnings("ignore", category=pd.errors.PerformanceWarning)
     df = pd.DataFrame()
     for model_dir in dst_dir.glob("*"):
-        model = model_dir.name
-        task = model.split("-")[0]
-        contrast = model.split("-")[1]
-        dfs = list()
-        for filepath in model_dir.glob("*.csv"):
-            # sometimes an empty file is 1 byte
-            if filepath.stat().st_size < 5:
+         if(model_dir.name != '.DS_Store'):
+            model = model_dir.name
+            task = model.split("-")[0]
+            contrast = model.split("-")[1]
+            dfs = list()
+            for filepath in model_dir.glob("*.csv"):
+                # sometimes an empty file is 1 byte
+                if filepath.stat().st_size < 5:
+                    continue
+                dfs.append(pd.read_csv(filepath))
+            if len(dfs) == 0:
                 continue
-            dfs.append(pd.read_csv(filepath))
-        if len(dfs) == 0:
-            continue
-        tmp = pd.concat(dfs).set_index("subject")
-        for mask in tmp.columns:
-            df[f"{task}-{contrast}-{mask}"] = tmp[mask]
+            tmp = pd.concat(dfs).set_index("subject")
+            for mask in tmp.columns:
+                df[f"{task}-{contrast}-{mask}"] = tmp[mask]
     df.to_csv(dst, index=True)
+
+
+
 
 
 def batch_ppi_betadump(root, sessions, subjects, models, masks):
@@ -67,8 +93,8 @@ def batch_ppi_betadump(root, sessions, subjects, models, masks):
             contrast = row["contrast"]
             contrast_num = 1  # This is always 1. AKA the positive regressor
             template_path = (paths.task_path(root, session, "%s", task) /
-                             "ppi" / f"{seed}_{contrast}" /
-                             "con_%04d.hdr" % int(contrast_num))
+                             "ppi" / f"{seed}_{contrast}" / "con_0001.nii")
+                             #"con_%04d.nii" % int(contrast_num)) # int(contrast_num)?
 
             model_name = f"{task}-{contrast.lower()}-{seed}"
             dst = dst_dir / model_name / "{subject}.csv"
@@ -81,22 +107,25 @@ def batch_ppi_betadump(root, sessions, subjects, models, masks):
 
 def merge_ppi(dst_dir, dst):
     df = pd.DataFrame()
+    import warnings
+    warnings.filterwarnings("ignore", category=pd.errors.PerformanceWarning)
     for model_dir in dst_dir.glob("*"):
-        model = model_dir.name
-        task = model.split("-")[0]
-        contrast = model.split("-")[1]
-        mask_1 = model.split("-")[2]
-        dfs = list()
-        for filepath in model_dir.glob("*.csv"):
-            # sometimes an empty file is 1 byte
-            if filepath.stat().st_size < 5:
+        if(model_dir.name != '.DS_Store'):
+            model = model_dir.name
+            task = model.split("-")[0]
+            contrast = model.split("-")[1]
+            mask_1 = model.split("-")[2]
+            dfs = list()
+            for filepath in model_dir.glob("*.csv"):
+                # sometimes an empty file is 1 byte
+                if filepath.stat().st_size < 5:
+                    continue
+                dfs.append(pd.read_csv(filepath))
+            if len(dfs) == 0:
                 continue
-            dfs.append(pd.read_csv(filepath))
-        if len(dfs) == 0:
-            continue
-        tmp = pd.concat(dfs).set_index("subject")
-        for mask_2 in tmp.columns:
-            df[f"{task}-{contrast}-{mask_1}-{mask_2}"] = tmp[mask_2]
+            tmp = pd.concat(dfs).set_index("subject")
+            for mask_2 in tmp.columns:
+                df[f"{task}-{contrast}-{mask_1}-{mask_2}"] = tmp[mask_2]
     df.to_csv(dst, index=True)
 
 
@@ -151,7 +180,14 @@ def betadump(root, session, subject, template_path, masks, dst):
         if not contrast.is_file() or not grey_mask.is_file():
             beta = np.nan
         else:
-            beta = fsl_command("fslstats", contrast, "-k", grey_mask, "-m")
+            ####ajk edit -- remove NaN's and replace with zeros from all con images so that spm beta dump works
+            import os
+            os.system("fslmaths " + grey_mask + " -nan " + grey_mask) ## will output as new .nii.gz
+            os.system("rm " + grey_mask) # remove old .nii file with nans
+            temp_maskname = grey_mask + ".gz"
+            os.system('gunzip ' + temp_maskname) #convert back to .nii
+            #### end edits
+            beta = fsl_command("fslstats", contrast, "-k", grey_mask, "-M") ## ajk edit -M ignores zeroes
             beta = float(beta.decode("utf-8").replace("\n", ""))
         row[mask] = beta
     pd.DataFrame([row]).to_csv(filepath, index=False)
@@ -175,9 +211,10 @@ def batch_betadumps(config_dir):
     act_models = pd.read_csv(config_dir / "act_models.csv")
     ppi_models = pd.read_csv(config_dir / "ppi_models.csv")
 
-    batch_act_betadump(root, sessions, subjects, act_models, masks)
+    #batch_act_betadump(root, sessions, subjects, act_models, masks)
+    batch_con_betadump(root, sessions, subjects, act_models, masks)
     batch_ppi_betadump(root, sessions, subjects, ppi_models, masks)
-    batch_ic_betadump(root, sessions, subjects, masks)
+    #batch_ic_betadump(root, sessions, subjects, masks) #Andrea commented since not currently getting IC
 
 
 if __name__ == "__main__":

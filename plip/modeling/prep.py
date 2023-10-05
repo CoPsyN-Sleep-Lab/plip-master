@@ -20,7 +20,7 @@ def skip_model(config_dir, session, subject, task, rel_folder):
     if rel_folder == "activation" and list(model_dir.glob("mni_con*.nii")):
         log.info(f"Skipping {session} {subject} {task} {rel_folder} modeling")
         return True
-    elif rel_folder != "activation" and list(model_dir.glob("con*.hdr")):
+    elif rel_folder != "activation" and list(model_dir.glob("con*.nii")):
         log.info(f"Skipping {session} {subject} {task} {rel_folder} modeling")
         return True
     else:
@@ -45,11 +45,12 @@ def setup_model(config_dir, session, subject, task, rel_folder, filename):
     # Regressors spikes
     task_dir = paths.task_path(root, session, subject, task)
     plipos.copy(
-        task_dir / "preproc" / "spike_regressors_wFD.mat",
-        model_dir / "spike_regressors_wFD.mat"
+        task_dir / "preproc" / "confounds_filtered.mat", ## ajk-edit: previously spike_regressors_wFD.mat
+        model_dir / "confounds_filtered.mat"
     )
 
     # Onsets
+    ## ajk edit: onsets parsed and transfered in plipify_fmriprep.sh
     transfer_onsets(root, session, subject, task, model_dir)
 
     # Mask

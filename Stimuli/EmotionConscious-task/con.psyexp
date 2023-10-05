@@ -1,0 +1,128 @@
+<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="1.83.04">
+  <Settings>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' %(expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="color" updates="None" val="$[-1,-1,-1]" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="[1620, 1620]" valType="code"/>
+    <Param name="Full-screen window" updates="None" val="False" valType="bool"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="Experiment info" updates="None" val="{u'session': u'001', u'participant': u''}" valType="code"/>
+    <Param name="Save csv file" updates="None" val="False" valType="bool"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="expName" updates="None" val="NonCon" valType="str"/>
+    <Param name="logging level" updates="None" val="exp" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="Save excel file" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="use prefs" valType="str"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+  </Settings>
+  <Routines>
+    <Routine name="trial">
+      <StaticComponent name="ISI">
+        <Param name="code" updates="None" val="" valType="code"/>
+        <Param name="name" updates="None" val="ISI" valType="code"/>
+        <Param name="stopVal" updates="constant" val="0.5" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+      </StaticComponent>
+      <TextComponent name="instrText">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="name" updates="None" val="instrText" valType="code"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="text" updates="constant" val="In this experiment you will see a series of faces, presented in pairs. &amp;#10;&amp;#10;The first face in each pair will be presented for only a fraction of a second and may be hard to see. &amp;#10;&amp;#10;You don't need to do anything but lay still and relax, but please pay attention because we may be asking you some questions about them later. " valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="instrKey">
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="instrKey" valType="code"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="allowedKeys" updates="constant" val="" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="neutral">
+      <ImageComponent name="image">
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="flipVert" updates="constant" val="False" valType="bool"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="flipHoriz" updates="constant" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="image" valType="code"/>
+        <Param name="color" updates="constant" val="$[1,1,1]" valType="str"/>
+        <Param name="stopVal" updates="constant" val="0.50" valType="code"/>
+        <Param name="durationEstim" updates="None" val="0.50" valType="code"/>
+        <Param name="mask" updates="constant" val="None" valType="str"/>
+        <Param name="pos" updates="constant" val="[0, 0]" valType="code"/>
+        <Param name="interpolate" updates="constant" val="linear" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="texture resolution" updates="constant" val="128" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="image" updates="set every repeat" val="$stimulus" valType="str"/>
+        <Param name="size" updates="constant" val="" valType="code"/>
+      </ImageComponent>
+    </Routine>
+    <Routine name="blank">
+      <StaticComponent name="space">
+        <Param name="code" updates="None" val="" valType="code"/>
+        <Param name="name" updates="None" val="space" valType="code"/>
+        <Param name="stopVal" updates="constant" val="0.75" valType="code"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+      </StaticComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="trial"/>
+    <LoopInitiator loopType="TrialHandler" name="trials">
+      <Param name="conditionsFile" updates="None" val="stimulus_order.csv" valType="str"/>
+      <Param name="name" updates="None" val="trials" valType="code"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="10" valType="code"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="conditions" updates="None" val="[{'stimulus': u'images/1,4.png'}, {'stimulus': u'images/5,4.png'}, {'stimulus': u'images/3,4.png'}, {'stimulus': u'images/6,4.png'}, {'stimulus': u'images/8,4.png'}, {'stimulus': u'images/7,4.png'}, {'stimulus': u'images/2,4.png'}, {'stimulus': u'images/4,4.png'}, {'stimulus': u'images/2,2.png'}, {'stimulus': u'images/8,2.png'}, {'stimulus': u'images/7,2.png'}, {'stimulus': u'images/3,2.png'}, {'stimulus': u'images/4,2.png'}, {'stimulus': u'images/1,2.png'}, {'stimulus': u'images/6,2.png'}, {'stimulus': u'images/5,2.png'}, {'stimulus': u'images/1,1.png'}, {'stimulus': u'images/7,1.png'}, {'stimulus': u'images/6,1.png'}, {'stimulus': u'images/2,1.png'}, {'stimulus': u'images/4,1.png'}, {'stimulus': u'images/5,1.png'}, {'stimulus': u'images/8,1.png'}, {'stimulus': u'images/3,1.png'}, {'stimulus': u'images/6,3.png'}, {'stimulus': u'images/8,3.png'}, {'stimulus': u'images/7,3.png'}, {'stimulus': u'images/5,3.png'}, {'stimulus': u'images/1,3.png'}, {'stimulus': u'images/4,3.png'}, {'stimulus': u'images/3,3.png'}, {'stimulus': u'images/2,3.png'}, {'stimulus': u'images/1,4.png'}, {'stimulus': u'images/5,4.png'}, {'stimulus': u'images/3,4.png'}, {'stimulus': u'images/6,4.png'}, {'stimulus': u'images/8,4.png'}, {'stimulus': u'images/7,4.png'}, {'stimulus': u'images/2,4.png'}, {'stimulus': u'images/4,4.png'}, {'stimulus': u'images/6,6.png'}, {'stimulus': u'images/4,6.png'}, {'stimulus': u'images/7,6.png'}, {'stimulus': u'images/3,6.png'}, {'stimulus': u'images/8,6.png'}, {'stimulus': u'images/2,6.png'}, {'stimulus': u'images/1,6.png'}, {'stimulus': u'images/5,6.png'}, {'stimulus': u'images/1,1.png'}, {'stimulus': u'images/7,1.png'}, {'stimulus': u'images/6,1.png'}, {'stimulus': u'images/2,1.png'}, {'stimulus': u'images/4,1.png'}, {'stimulus': u'images/5,1.png'}, {'stimulus': u'images/8,1.png'}, {'stimulus': u'images/3,1.png'}, {'stimulus': u'images/6,6.png'}, {'stimulus': u'images/4,6.png'}, {'stimulus': u'images/7,6.png'}, {'stimulus': u'images/3,6.png'}, {'stimulus': u'images/8,6.png'}, {'stimulus': u'images/2,6.png'}, {'stimulus': u'images/1,6.png'}, {'stimulus': u'images/5,6.png'}, {'stimulus': u'images/2,2.png'}, {'stimulus': u'images/8,2.png'}, {'stimulus': u'images/7,2.png'}, {'stimulus': u'images/3,2.png'}, {'stimulus': u'images/4,2.png'}, {'stimulus': u'images/1,2.png'}, {'stimulus': u'images/6,2.png'}, {'stimulus': u'images/5,2.png'}, {'stimulus': u'images/1,4.png'}, {'stimulus': u'images/5,4.png'}, {'stimulus': u'images/3,4.png'}, {'stimulus': u'images/6,4.png'}, {'stimulus': u'images/8,4.png'}, {'stimulus': u'images/7,4.png'}, {'stimulus': u'images/2,4.png'}, {'stimulus': u'images/4,4.png'}, {'stimulus': u'images/2,2.png'}, {'stimulus': u'images/8,2.png'}, {'stimulus': u'images/7,2.png'}, {'stimulus': u'images/3,2.png'}, {'stimulus': u'images/4,2.png'}, {'stimulus': u'images/1,2.png'}, {'stimulus': u'images/6,2.png'}, {'stimulus': u'images/5,2.png'}, {'stimulus': u'images/8,5.png'}, {'stimulus': u'images/7,5.png'}, {'stimulus': u'images/3,5.png'}, {'stimulus': u'images/1,5.png'}, {'stimulus': u'images/5,5.png'}, {'stimulus': u'images/6,5.png'}, {'stimulus': u'images/2,5.png'}, {'stimulus': u'images/4,5.png'}, {'stimulus': u'images/6,3.png'}, {'stimulus': u'images/8,3.png'}, {'stimulus': u'images/7,3.png'}, {'stimulus': u'images/5,3.png'}, {'stimulus': u'images/1,3.png'}, {'stimulus': u'images/4,3.png'}, {'stimulus': u'images/3,3.png'}, {'stimulus': u'images/2,3.png'}, {'stimulus': u'images/6,6.png'}, {'stimulus': u'images/4,6.png'}, {'stimulus': u'images/7,6.png'}, {'stimulus': u'images/3,6.png'}, {'stimulus': u'images/8,6.png'}, {'stimulus': u'images/2,6.png'}, {'stimulus': u'images/1,6.png'}, {'stimulus': u'images/5,6.png'}, {'stimulus': u'images/6,3.png'}, {'stimulus': u'images/8,3.png'}, {'stimulus': u'images/7,3.png'}, {'stimulus': u'images/5,3.png'}, {'stimulus': u'images/1,3.png'}, {'stimulus': u'images/4,3.png'}, {'stimulus': u'images/3,3.png'}, {'stimulus': u'images/2,3.png'}, {'stimulus': u'images/1,1.png'}, {'stimulus': u'images/7,1.png'}, {'stimulus': u'images/6,1.png'}, {'stimulus': u'images/2,1.png'}, {'stimulus': u'images/4,1.png'}, {'stimulus': u'images/5,1.png'}, {'stimulus': u'images/8,1.png'}, {'stimulus': u'images/3,1.png'}, {'stimulus': u'images/8,5.png'}, {'stimulus': u'images/7,5.png'}, {'stimulus': u'images/3,5.png'}, {'stimulus': u'images/1,5.png'}, {'stimulus': u'images/5,5.png'}, {'stimulus': u'images/6,5.png'}, {'stimulus': u'images/2,5.png'}, {'stimulus': u'images/4,5.png'}, {'stimulus': u'images/1,1.png'}, {'stimulus': u'images/7,1.png'}, {'stimulus': u'images/6,1.png'}, {'stimulus': u'images/2,1.png'}, {'stimulus': u'images/4,1.png'}, {'stimulus': u'images/5,1.png'}, {'stimulus': u'images/8,1.png'}, {'stimulus': u'images/3,1.png'}, {'stimulus': u'images/6,6.png'}, {'stimulus': u'images/4,6.png'}, {'stimulus': u'images/7,6.png'}, {'stimulus': u'images/3,6.png'}, {'stimulus': u'images/8,6.png'}, {'stimulus': u'images/2,6.png'}, {'stimulus': u'images/1,6.png'}, {'stimulus': u'images/5,6.png'}, {'stimulus': u'images/1,1.png'}, {'stimulus': u'images/7,1.png'}, {'stimulus': u'images/6,1.png'}, {'stimulus': u'images/2,1.png'}, {'stimulus': u'images/4,1.png'}, {'stimulus': u'images/5,1.png'}, {'stimulus': u'images/8,1.png'}, {'stimulus': u'images/3,1.png'}, {'stimulus': u'images/2,2.png'}, {'stimulus': u'images/8,2.png'}, {'stimulus': u'images/7,2.png'}, {'stimulus': u'images/3,2.png'}, {'stimulus': u'images/4,2.png'}, {'stimulus': u'images/1,2.png'}, {'stimulus': u'images/6,2.png'}, {'stimulus': u'images/5,2.png'}, {'stimulus': u'images/6,3.png'}, {'stimulus': u'images/8,3.png'}, {'stimulus': u'images/7,3.png'}, {'stimulus': u'images/5,3.png'}, {'stimulus': u'images/1,3.png'}, {'stimulus': u'images/4,3.png'}, {'stimulus': u'images/3,3.png'}, {'stimulus': u'images/2,3.png'}, {'stimulus': u'images/8,5.png'}, {'stimulus': u'images/7,5.png'}, {'stimulus': u'images/3,5.png'}, {'stimulus': u'images/1,5.png'}, {'stimulus': u'images/5,5.png'}, {'stimulus': u'images/6,5.png'}, {'stimulus': u'images/2,5.png'}, {'stimulus': u'images/4,5.png'}, {'stimulus': u'images/6,3.png'}, {'stimulus': u'images/8,3.png'}, {'stimulus': u'images/7,3.png'}, {'stimulus': u'images/5,3.png'}, {'stimulus': u'images/1,3.png'}, {'stimulus': u'images/4,3.png'}, {'stimulus': u'images/3,3.png'}, {'stimulus': u'images/2,3.png'}, {'stimulus': u'images/1,4.png'}, {'stimulus': u'images/5,4.png'}, {'stimulus': u'images/3,4.png'}, {'stimulus': u'images/6,4.png'}, {'stimulus': u'images/8,4.png'}, {'stimulus': u'images/7,4.png'}, {'stimulus': u'images/2,4.png'}, {'stimulus': u'images/4,4.png'}, {'stimulus': u'images/8,5.png'}, {'stimulus': u'images/7,5.png'}, {'stimulus': u'images/3,5.png'}, {'stimulus': u'images/1,5.png'}, {'stimulus': u'images/5,5.png'}, {'stimulus': u'images/6,5.png'}, {'stimulus': u'images/2,5.png'}, {'stimulus': u'images/4,5.png'}, {'stimulus': u'images/1,4.png'}, {'stimulus': u'images/5,4.png'}, {'stimulus': u'images/3,4.png'}, {'stimulus': u'images/6,4.png'}, {'stimulus': u'images/8,4.png'}, {'stimulus': u'images/7,4.png'}, {'stimulus': u'images/2,4.png'}, {'stimulus': u'images/4,4.png'}, {'stimulus': u'images/2,2.png'}, {'stimulus': u'images/8,2.png'}, {'stimulus': u'images/7,2.png'}, {'stimulus': u'images/3,2.png'}, {'stimulus': u'images/4,2.png'}, {'stimulus': u'images/1,2.png'}, {'stimulus': u'images/6,2.png'}, {'stimulus': u'images/5,2.png'}, {'stimulus': u'images/8,5.png'}, {'stimulus': u'images/7,5.png'}, {'stimulus': u'images/3,5.png'}, {'stimulus': u'images/1,5.png'}, {'stimulus': u'images/5,5.png'}, {'stimulus': u'images/6,5.png'}, {'stimulus': u'images/2,5.png'}, {'stimulus': u'images/4,5.png'}, {'stimulus': u'images/6,6.png'}, {'stimulus': u'images/4,6.png'}, {'stimulus': u'images/7,6.png'}, {'stimulus': u'images/3,6.png'}, {'stimulus': u'images/8,6.png'}, {'stimulus': u'images/2,6.png'}, {'stimulus': u'images/1,6.png'}, {'stimulus': u'images/5,6.png'}]" valType="str"/>
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+    </LoopInitiator>
+    <Routine name="blank"/>
+    <Routine name="neutral"/>
+    <LoopTerminator name="trials"/>
+  </Flow>
+</PsychoPy2experiment>

@@ -8,7 +8,7 @@ def setup_ppi(ppi_dir):
 
 
 def skip_ppi(model_dir, ppi_dir):
-    skip = (ppi_dir / "spmT_0002.hdr").is_file()
+    skip = (ppi_dir / "spmT_0002.nii").is_file()
     if skip:
         return skip
     plipos.rmtree(ppi_dir)

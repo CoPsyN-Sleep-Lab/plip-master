@@ -19,6 +19,8 @@ from plip.definitions import PLIP_ROOT, mni_mask
 from plip.definitions import fnirt_cfg1, fnirt_cfg2, fnirt_cfg3
 
 FSLDIR = Path(os.environ["FSLDIR"])
+#FSLDIR="/Users/copsynsleeplab/fsl/share/fsl/"
+# FSLDIR="/Users/copsynsleeplab/fsl/"
 mni_brain = FSLDIR / "data" / "standard" / "MNI152_T1_2mm_brain"
 
 

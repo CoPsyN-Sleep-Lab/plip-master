@@ -30,36 +30,40 @@ def parallel(session_subjects, fns, NUM_WORKERS):
 
 
 def subject_level(config_dir, sessions, subjects, NUM_WORKERS=12):
-    from plip.preproc.batch_preproc import preproc
-    session_subjects = itertools.product(sessions, subjects)
-    parallel(session_subjects, [preproc], NUM_WORKERS)
+    #from plip.preproc.batch_preproc import preproc
+    #session_subjects = itertools.product(sessions, subjects)
+    #parallel(session_subjects, [preproc], NUM_WORKERS)
 
-    from plip.ppi.batch_ppi import roi_ppi
-    from plip.intrinsic_connectivity.batch_ic_prep import ic_prep
-    session_subjects = itertools.product(sessions, subjects)
-    parallel(session_subjects, [ic_prep, roi_ppi], NUM_WORKERS)
+    ## comment out the below to skip ppi modeling:
+    print('skip')
+    # from plip.ppi.batch_ppi import roi_ppi
+    # # from plip.intrinsic_connectivity.batch_ic_prep import ic_prep
+    # session_subjects = itertools.product(sessions, subjects)
+    # # parallel(session_subjects, [ic_prep, roi_ppi], NUM_WORKERS)
+    # parallel(session_subjects, [roi_ppi], NUM_WORKERS)
+
 
 
 def group_level(config_dir):
     log = logging.getLogger("group")
     log.info("Starting group level analysis")
     try:
-        from plip.movement.batch_movement import movement
-        movement(config_dir)
-        log.info("Generated movement files")
+        # from plip.movement.batch_movement import movement
+        # movement(config_dir)
+        # log.info("Generated movement files")
 
         from plip.betadumps.betas import batch_betadumps
         batch_betadumps(config_dir)  # Run this will multiple threads
         log.info("Betadumps complete")
-
-        from plip.biotypes.prep_biotypes import prep_biotypes
-        files = prep_biotypes(config_dir)
-        log.info("Generated %s" % ", ".join([str(f) for f in files]))
-
-        from plip.biotypes.compute_biotypes import create_biotype_file
-        files = create_biotype_file(config_dir, *files)
-        log.info("Biotypes are computed, generated "
-                 "%s" % ", ".join([str(f) for f in files]))
+        #
+        # from plip.biotypes.prep_biotypes import prep_biotypes
+        # files = prep_biotypes(config_dir)
+        # log.info("Generated %s" % ", ".join([str(f) for f in files]))
+        #
+        # from plip.biotypes.compute_biotypes import create_biotype_file
+        # files = create_biotype_file(config_dir, *files)
+        # log.info("Biotypes are computed, generated "
+        #          "%s" % ", ".join([str(f) for f in files]))
     except Exception:
         log.exception("Issue during group level processing")
     log.info("PLIP complete.  Exiting")
