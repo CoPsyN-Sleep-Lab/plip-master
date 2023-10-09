@@ -35,12 +35,12 @@ def subject_level(config_dir, sessions, subjects, NUM_WORKERS=12):
     #parallel(session_subjects, [preproc], NUM_WORKERS)
 
     ## comment out the below to skip ppi modeling:
-    print('skip')
-    # from plip.ppi.batch_ppi import roi_ppi
-    # # from plip.intrinsic_connectivity.batch_ic_prep import ic_prep
-    # session_subjects = itertools.product(sessions, subjects)
-    # # parallel(session_subjects, [ic_prep, roi_ppi], NUM_WORKERS)
-    # parallel(session_subjects, [roi_ppi], NUM_WORKERS)
+    # print('skip')
+    from plip.ppi.batch_ppi import roi_ppi
+    # from plip.intrinsic_connectivity.batch_ic_prep import ic_prep
+    session_subjects = itertools.product(sessions, subjects)
+    # parallel(session_subjects, [ic_prep, roi_ppi], NUM_WORKERS)
+    parallel(session_subjects, [roi_ppi], NUM_WORKERS)
 
 
 
