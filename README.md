@@ -3,8 +3,8 @@
 ### Installation
 
 ```
-git clone https://github.com/WilliamsPANLab/plip
-cd plip
+git clone https://github.com/CoPsyN-Sleep-Lab/plip-copsyn/tree/SkipPreproc
+cd plip-master
 pip3 install .
 ```
 
@@ -13,7 +13,7 @@ pip3 install .
 To reflect modifications to master code run the following commands while in the repository root
 
 ```
-git pull origin master
+git pull origin SkipPreproc
 pip3 unstall plip
 pip3 install .
 ```
