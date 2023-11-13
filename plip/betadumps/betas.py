@@ -51,7 +51,7 @@ def batch_con_betadump(root, sessions, subjects, models, masks):
                 ## ajk edits -- remove NaNs, replace with zeros
                 import os
                 con_path = str(template_path) % subject
-                os.system("fslmaths " + str(con_path) + " -nan " + str(con_path)) ## will output as new .nii.gz?
+                os.system("fslmaths " + str(con_path) + " -nan " + str(con_path))
                 ## end ajk edits
                 betadump(root, session, subject, template_path, masks, dst)
         merge_act(dst_dir, paths.dump_path(root) / f"connectivity_{session}.csv")
@@ -103,42 +103,11 @@ def batch_ppi_betadump(root, sessions, subjects, models, masks):
             print("Gathering PPI betas for %s" % model_name)
             plipos.makedirs(dst.parent)
 
-            # ## AJK-EDITS  remove NaN's from PPI con files and replace with zeros so spm beta dump works##############
-            # ### Delete if the alt code in the for loop works...
-            # import os
-            # ## debugging - ajk
-            # file_path = "/Users/copsynsleeplab/Desktop/betadump_PPI_debug_log_ajk.txt"
-            # if not os.path.exists(file_path):
-            #     with open(file_path, "x") as f:
-            #         pass
-            # with open(file_path, "w") as f:
-            #     f.write("The variable contrast is " + str(contrast) + "\n")
-            #     f.write("The variable template_path is " + str(template_path) + "\n")
-            # ## end debugging-ajk
-            #
-            # os.system("fslmaths " + str(contrast) + " -nan " + str(contrast)) ## will output as new .nii.gz
-            # os.system("rm " + str(contrast)) # remove old .nii file with nans
-            # temp_conname = str(contrast) + ".gz"
-            # os.system('gunzip ' + temp_conname) #convert back to .nii
-            # ## END AJK EDITS ####################################
-
             for subject in tqdm(subjects):
 
-                ## ajk edits remove NaN's from PPI con files and replace with zeros so spm beta dump work
+                ## ajk edits remove NaN's from PPI con files and replace with zeros so spm beta dump works
                 import os
                 con_path = str(template_path) % subject
-
-                # ## debugging - ajk #################################
-                # file_path = "/Users/copsynsleeplab/Desktop/betadump_PPI_debug_log_ajk.txt"
-                # if not os.path.exists(file_path):
-                #     with open(file_path, "x") as f:
-                #         pass
-                # with open(file_path, "w") as f:
-                #     f.write("The variable contrast is " + str(contrast) + "\n")
-                #     f.write("The variable template_path is " + str(template_path) + "\n")
-                #     f.write("The variable subject is " + str(subject) + "\n")
-                #     f.write("The variable con_path is " + str(con_path) + "\n")
-                # ## end debugging-ajk #################################
 
                 os.system("fslmaths " + str(con_path) + " -nan " + str(con_path)) ## will output as new .nii.gz?
                 #os.system("rm " + str(con_path)) # remove old .nii file with nans
@@ -228,15 +197,6 @@ def betadump(root, session, subject, template_path, masks, dst):
         else:
 
             ## AJK EDIT - ADD IN 3DRESAMPLE COMMAND TO RESAMPLE ALL MASK IMAGES TO MATCH CON images
-            file_path = "/Users/copsynsleeplab/Desktop/betadump_debug_log_ajk.txt"
-            import os
-            if not os.path.exists(file_path):
-                with open(file_path, "x") as f:
-                    pass
-            with open(file_path, "w") as f:
-                f.write("The variable contrast is: " + str(contrast) + "\n")
-                f.write("The variable grey_mask is: " + str(grey_mask) + "\n")
-
             import os
             os.system("3dresample -prefix " + str(grey_mask)[:-4] + "_resampled.nii " + " -master " + str(contrast) + " -input " + str(grey_mask))
             os.system("rm " + str(grey_mask))
