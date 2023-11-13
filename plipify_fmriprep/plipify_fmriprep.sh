@@ -10,7 +10,7 @@
 #-------------------------------------------------------------------------------------------
 ## User Inputs
 Project_name="TIRED"
-subject="TIRED163"
+subject="TIRED278"
 local_plipproject_dir="/Users/copsynsleeplab/Desktop/TIRED-plip/"
 local_fmriprep_dir="/Users/copsynsleeplab/Desktop/fmriprep-22.1.1/"
 local_pliproot_dir="/Users/copsynsleeplab/plip-master/"

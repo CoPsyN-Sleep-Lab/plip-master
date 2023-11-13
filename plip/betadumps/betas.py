@@ -48,16 +48,20 @@ def batch_con_betadump(root, sessions, subjects, models, masks):
             print("Gathering Connectivity betas for %s" % model_name)
             plipos.makedirs(dst.parent)
             for subject in tqdm(subjects):
+                ## ajk edits -- remove NaNs, replace with zeros
+                import os
+                con_path = str(template_path) % subject
+                os.system("fslmaths " + str(con_path) + " -nan " + str(con_path)) ## will output as new .nii.gz?
+                ## end ajk edits
                 betadump(root, session, subject, template_path, masks, dst)
         merge_act(dst_dir, paths.dump_path(root) / f"connectivity_{session}.csv")
-
 
 def merge_act(dst_dir, dst):
     import warnings
     warnings.filterwarnings("ignore", category=pd.errors.PerformanceWarning)
     df = pd.DataFrame()
     for model_dir in dst_dir.glob("*"):
-         if(model_dir.name != '.DS_Store'):
+        if(model_dir.name != '.DS_Store'):
             model = model_dir.name
             task = model.split("-")[0]
             contrast = model.split("-")[1]
@@ -75,9 +79,6 @@ def merge_act(dst_dir, dst):
     df.to_csv(dst, index=True)
 
 
-
-
-
 def batch_ppi_betadump(root, sessions, subjects, models, masks):
     """
     Create list of session dirs that will be looped over in pl_betaDump
@@ -93,14 +94,59 @@ def batch_ppi_betadump(root, sessions, subjects, models, masks):
             contrast = row["contrast"]
             contrast_num = 1  # This is always 1. AKA the positive regressor
             template_path = (paths.task_path(root, session, "%s", task) /
-                             "ppi" / f"{seed}_{contrast}" / "con_0001.nii")
-                             #"con_%04d.nii" % int(contrast_num)) # int(contrast_num)?
+                         "ppi" / f"{seed}_{contrast}" / "con_0001.nii")
+                         #"con_%04.nii" % int(contrast_num)) # int(contrast_num)?
+
 
             model_name = f"{task}-{contrast.lower()}-{seed}"
             dst = dst_dir / model_name / "{subject}.csv"
             print("Gathering PPI betas for %s" % model_name)
             plipos.makedirs(dst.parent)
+
+            # ## AJK-EDITS  remove NaN's from PPI con files and replace with zeros so spm beta dump works##############
+            # ### Delete if the alt code in the for loop works...
+            # import os
+            # ## debugging - ajk
+            # file_path = "/Users/copsynsleeplab/Desktop/betadump_PPI_debug_log_ajk.txt"
+            # if not os.path.exists(file_path):
+            #     with open(file_path, "x") as f:
+            #         pass
+            # with open(file_path, "w") as f:
+            #     f.write("The variable contrast is " + str(contrast) + "\n")
+            #     f.write("The variable template_path is " + str(template_path) + "\n")
+            # ## end debugging-ajk
+            #
+            # os.system("fslmaths " + str(contrast) + " -nan " + str(contrast)) ## will output as new .nii.gz
+            # os.system("rm " + str(contrast)) # remove old .nii file with nans
+            # temp_conname = str(contrast) + ".gz"
+            # os.system('gunzip ' + temp_conname) #convert back to .nii
+            # ## END AJK EDITS ####################################
+
             for subject in tqdm(subjects):
+
+                ## ajk edits remove NaN's from PPI con files and replace with zeros so spm beta dump work
+                import os
+                con_path = str(template_path) % subject
+
+                # ## debugging - ajk #################################
+                # file_path = "/Users/copsynsleeplab/Desktop/betadump_PPI_debug_log_ajk.txt"
+                # if not os.path.exists(file_path):
+                #     with open(file_path, "x") as f:
+                #         pass
+                # with open(file_path, "w") as f:
+                #     f.write("The variable contrast is " + str(contrast) + "\n")
+                #     f.write("The variable template_path is " + str(template_path) + "\n")
+                #     f.write("The variable subject is " + str(subject) + "\n")
+                #     f.write("The variable con_path is " + str(con_path) + "\n")
+                # ## end debugging-ajk #################################
+
+                os.system("fslmaths " + str(con_path) + " -nan " + str(con_path)) ## will output as new .nii.gz?
+                #os.system("rm " + str(con_path)) # remove old .nii file with nans
+                # temp_conname = str(con_path) + ".gz"
+                # temp_conname = str(con_path)
+                # os.system('gunzip ' + temp_conname) #convert back to .nii
+                ## END AJK EDITS ####################################
+
                 betadump(root, session, subject, template_path, masks, dst)
         merge_ppi(dst_dir, paths.dump_path(root) / f"ppi_{session}.csv")
 
@@ -180,14 +226,24 @@ def betadump(root, session, subject, template_path, masks, dst):
         if not contrast.is_file() or not grey_mask.is_file():
             beta = np.nan
         else:
-            ####ajk edit -- remove NaN's and replace with zeros from all con images so that spm beta dump works
+
+            ## AJK EDIT - ADD IN 3DRESAMPLE COMMAND TO RESAMPLE ALL MASK IMAGES TO MATCH CON images
+            file_path = "/Users/copsynsleeplab/Desktop/betadump_debug_log_ajk.txt"
             import os
-            os.system("fslmaths " + grey_mask + " -nan " + grey_mask) ## will output as new .nii.gz
-            os.system("rm " + grey_mask) # remove old .nii file with nans
-            temp_maskname = grey_mask + ".gz"
-            os.system('gunzip ' + temp_maskname) #convert back to .nii
-            #### end edits
-            beta = fsl_command("fslstats", contrast, "-k", grey_mask, "-M") ## ajk edit -M ignores zeroes
+            if not os.path.exists(file_path):
+                with open(file_path, "x") as f:
+                    pass
+            with open(file_path, "w") as f:
+                f.write("The variable contrast is: " + str(contrast) + "\n")
+                f.write("The variable grey_mask is: " + str(grey_mask) + "\n")
+
+            import os
+            os.system("3dresample -prefix " + str(grey_mask)[:-4] + "_resampled.nii " + " -master " + str(contrast) + " -input " + str(grey_mask))
+            os.system("rm " + str(grey_mask))
+            os.system("mv " + str(grey_mask)[:-4] + "_resampled.nii " + str(grey_mask))
+            ### END AJK EDITS
+
+            beta = fsl_command("fslstats", contrast, "-k", grey_mask, "-M") ## ajk edit -M ignores zeroes, -m includes zero's
             beta = float(beta.decode("utf-8").replace("\n", ""))
         row[mask] = beta
     pd.DataFrame([row]).to_csv(filepath, index=False)
@@ -215,6 +271,7 @@ def batch_betadumps(config_dir):
     batch_con_betadump(root, sessions, subjects, act_models, masks)
     batch_ppi_betadump(root, sessions, subjects, ppi_models, masks)
     #batch_ic_betadump(root, sessions, subjects, masks) #Andrea commented since not currently getting IC
+
 
 
 if __name__ == "__main__":

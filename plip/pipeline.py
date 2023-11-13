@@ -30,9 +30,9 @@ def parallel(session_subjects, fns, NUM_WORKERS):
 
 
 def subject_level(config_dir, sessions, subjects, NUM_WORKERS=12):
-    #from plip.preproc.batch_preproc import preproc
-    #session_subjects = itertools.product(sessions, subjects)
-    #parallel(session_subjects, [preproc], NUM_WORKERS)
+    from plip.preproc.batch_preproc import preproc
+    session_subjects = itertools.product(sessions, subjects)
+    parallel(session_subjects, [preproc], NUM_WORKERS)
 
     ## comment out the below to skip ppi modeling:
     # print('skip')
@@ -77,9 +77,9 @@ def run(config_dir):
     sessions = config_get(config, "sessions")
     subject_list = config_get(config, "subject_list")
     subjects = pd.read_csv(subject_list)["subject"].astype(str)
-    f = open("DEBUG_LOG.txt", "w+")
-    f.write("test 1")
-    f.close()
+    # f = open("DEBUG_LOG.txt", "w+")
+    # f.write("test 1")
+    # f.close()
     subject_level(config_dir, sessions, subjects)
 
     from plip.utils.os import group_logger
