@@ -150,6 +150,13 @@ def run(config_dir, session, subject):
         mask_names = [m.replace("\n", "") for m in mask_names]
 
     # Create grey matter masks
+    ## ajk edit
+    log.info(f"The anat_dir is {anat_dir}")
+    log.info(f"The config_dir is {config_dir}")
+    log.info(f"The mask_dir is {mask_dir}")
+    log.info(f"The grey_mask_dir is {grey_mask_dir}")
+    ## end ajk edits
+
     pl_grey_masks(anat_dir, grey_mask_dir, mask_dir, mask_names)
     log.info("Gray matter masks complete")
 

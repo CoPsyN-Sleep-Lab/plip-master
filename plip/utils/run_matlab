@@ -24,3 +24,6 @@ done
 
 echo "Running $matlab_function($arg_str)"
 exec $MATLAB_DIR/matlab -r "addpath(genpath('$plip_root')); addpath(genpath('$spm_path')); try $matlab_function($arg_str); catch ME; disp(ME.message); end; quit"
+
+# ## temp: below used for debugging
+# exec $MATLAB_DIR/matlab -wait -r "addpath(genpath('$plip_root')); addpath(genpath('$spm_path')); $matlab_function($arg_str); -wait; disp(ME.message); end; quit"

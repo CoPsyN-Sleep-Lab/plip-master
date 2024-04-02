@@ -6,9 +6,13 @@
     "smooth_param": 6,
     "dof": 12,
     "t1_type": ["T1w_1mm"],
-    "spm_path": "/users/copsynsleeplab/plip-master/plip/library/spm12/",
+    "spm_path": "/users/copsynsleeplab/plip-master/library/spm12/",
     "mask_dir": "/users/copsynsleeplab/plip-master/masks/plip/",
     "tasks": ["conscious", "nonconscious", "gonogo", "emocon", "emoreg"],
-    "ic_tasks": ["conscious", "nonconscious", "gonogo", "emocon", "emoreg"],
-    "standardization": "/share/leanew1/Standardization/connhc_n50_dof6.csv"
+    "ic_tasks": ["conscious", "nonconscious"],
+    "standardization": "/share/leanew1/Standardization/connhc_n50_dof6.csv",
+    "environment": {
+        "MATLAB_DIR": "/Applications/MATLAB_R2022b.app/bin",
+        "FSLDIR": "/Users/copsynsleeplab/fsl/"
+    }
 }

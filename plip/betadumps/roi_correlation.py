@@ -25,6 +25,18 @@ def roi_time_course(filepath, mask_paths):
         mask = mri.load_image(mask_path, closest_canonical=False)
         mask_data = mri.load_data(mask)
 
+        ## AJK edit - resample if necessary
+        if not (mask.affine == fmri.affine).all():
+            print("~~~~~~~~~~~Affine's don't match!~~~~~~~~~~~")
+            print("The mask is: ", mask_path.name)
+            print("~~~~~~~~~~~Resampling~~~~~~~~~~~~~~~~~~~~~")
+
+            import os
+            os.system("3dresample -prefix " + str(mask_path)[:-4] + "_resampled.nii " + " -master " + str(filepath) + " -input " + str(mask_path))
+            os.system("rm " + str(mask_path))
+            os.system("mv " + str(mask_path)[:-4] + "_resampled.nii " + str(mask_path))
+            continue
+
         assert (mask.affine == fmri.affine).all()
         mask_time_course = list()
         for i in range(fmri.shape[3]):

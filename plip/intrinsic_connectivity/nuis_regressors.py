@@ -65,12 +65,17 @@ def var_spikes(spikes_path):
 def load_movement(movement_path):
     # NOTE: see if this can be a CSV instead
     df = pd.read_csv(movement_path, sep="  ", header=None, engine="python")
-    dx = df.shift(1).fillna(0) - df
+
+    ## AJK EDIT using csv
+    df = pd.read_csv(movement_path, sep=",", header=None, engine="python")
+    ## END AJK EDIT
+
+    dx = df.shift(1).fillna(0) - df # first derivative
     moves = pd.concat([df, dx], axis=1)
     # FIXME HACK, the rp_txt files should really have columns names!
     moves.columns = [f"{i}" for i in range(12)]
     for c in moves.columns:
-        moves[f"{c}_sqr"] = np.square(moves[c])
+        moves[f"{c}_sqr"] = np.square(moves[c]) # quadratic expansion
     return moves
 
 
@@ -83,17 +88,36 @@ def padded_values(values, pad_num, total_num, index):
 
 
 def combine_mean_signals(ic_dir, anat_dir):
+    # """ Create time courses from wm and csf masks """
+    # all_tasks = ic_dir / "all_tasks.nii.gz"
+    # data = dict()
+    # for name, filename in [("wm", "wwm_FSL_eroded_mask_fin.nii"),
+    #                        ("csf", "wcsf_FSL_eroded_mask.nii")]:
+    #     mask = anat_dir / "FSL_segmentation" / filename
+    #     res = fsl_command("fslstats", "-t", all_tasks, "-k", mask, "-M")
+    #
+    #     # convert the fsl output to something usable
+    #     data[name] = [float(elem) for elem in
+    #                   res.decode("utf-8").split("\n") if elem]
+    # return pd.DataFrame(data)
+
+    #### AJK EDITS (added in resampling between masks and all_tasks.nii)
     """ Create time courses from wm and csf masks """
-    all_tasks = ic_dir / "all_tasks.nii.gz"
+    all_tasks = ic_dir / "all_tasks.nii"
     data = dict()
     for name, filename in [("wm", "wwm_FSL_eroded_mask_fin.nii"),
-                           ("csf", "wcsf_FSL_eroded_mask.nii")]:
+                            ("csf", "wcsf_FSL_eroded_mask.nii")]:
         mask = anat_dir / "FSL_segmentation" / filename
+        ## 3Dresample masks and all_tasks.nii
+        import os
+        os.system("3dresample -prefix " + str(mask)[:-4] + "_resampled.nii " + " -master " + str(all_tasks) + " -input " + str(mask))
+        os.system("rm " + str(mask))
+        os.system("mv " + str(mask)[:-4] + "_resampled.nii " + str(mask))
+        ## END AJK EDITS
         res = fsl_command("fslstats", "-t", all_tasks, "-k", mask, "-M")
 
-        # convert the fsl output to something usable
-        data[name] = [float(elem) for elem in
-                      res.decode("utf-8").split("\n") if elem]
+        # convert the fsl output to someting usable
+        data[name] = [float(elem) for elem in res.decode("utf-8").split("\n") if elem]
     return pd.DataFrame(data)
 
 
@@ -117,7 +141,7 @@ def nuis_regressors(movement_paths, spikes_paths, spmmat_paths, ic_tasks,
     task_info = zip(ic_tasks, spikes_paths, spmmat_paths)
     for i, (task, spikes_fp, spmmat) in enumerate(task_info):
         stimuli = model_regressors(spmmat)
-        # FIXME: make the spikes VAR1_1FD2 file always exist!
+        # FIXME: make sure the spikes VAR1_1FD2 file always exist!
         if spikes_fp.is_file():
             spikes = var_spikes(spikes_fp)
             regressors = pd.concat([stimuli, spikes], axis=1)
@@ -140,8 +164,7 @@ def run(root, session, subject, ic_tasks, task_vols):
     glb = combine_mean_signals(ic_dir, anat_dir)
     nuis = nuis_regressors(
         movement_paths, spikes_paths, spmmat_paths,
-        ic_tasks, task_vols
-    )
+        ic_tasks, task_vols)
 
     nuis_reg = pd.concat([nuis, glb[["wm", "csf"]]], axis=1)
     nuis_reg.to_csv(ic_dir / "nuisance.txt", index=False, header=False)

@@ -230,7 +230,7 @@ def batch_betadumps(config_dir):
     #batch_act_betadump(root, sessions, subjects, act_models, masks)
     batch_con_betadump(root, sessions, subjects, act_models, masks)
     batch_ppi_betadump(root, sessions, subjects, ppi_models, masks)
-    #batch_ic_betadump(root, sessions, subjects, masks) #Andrea commented since not currently getting IC
+    batch_ic_betadump(root, sessions, subjects, masks) # commented since not currently getting IC
 
 
 

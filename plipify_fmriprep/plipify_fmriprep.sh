@@ -7,10 +7,14 @@
 ## 3. Cuts 3 dummy scans from task-series.
 ## 3. Creates onset.csv files for 1st level modeling from psychopy log files on the lab's Box. Copies these files to plip.
 ## 4. confounds_tsv2mat.py Makes nuisance regressors derived from fmriprep confounds.tsv files. Filters the full .tsv for the required nuisance regressors and appends motion_outlier columns (also adds the 1 before/2 after detected spikes), removes first 3 rows for dummy-scans, and converts to .mat file for use by plip [? may need to rename confounds or spike_regressors_wFD.mat or edit plip to expect different names.] To edit the nuisance regressors for 1stlevels, edit or create-new nuisance_params_XX.txt contained within "<local_pliproot_dir>/plipify_fmriprep/"
+
+## Updates 21-March-2-024
+## Makes files required for intrinsic connectivity modeling, and places in relevant plip directories.
+
 #-------------------------------------------------------------------------------------------
 ## User Inputs
 Project_name="TIRED"
-subject="TIRED278"
+subject="TIRED022"
 local_plipproject_dir="/Users/copsynsleeplab/Desktop/TIRED-plip/"
 local_fmriprep_dir="/Users/copsynsleeplab/Desktop/fmriprep-22.1.1/"
 local_pliproot_dir="/Users/copsynsleeplab/plip-master/"
@@ -399,6 +403,129 @@ if [ -f "$emocon_tsv" ]; then
 	mv "$local_plipproject_dir/processed/ETX/${subject}/func/emocon/connectivity/modeling/sub-${subject}_ses-ETX_task-emocon2_desc-confounds_timeseries_filtered.mat" "$local_plipproject_dir/processed/ETX/${subject}/func/emocon/connectivity/modeling/confounds_filtered.mat"
 	mv "${local_pliproot_dir}/plipify_fmriprep/OutlierVolInfo_total"*.txt "$local_plipproject_dir/processed/ETX/${subject}/func/emocon/preproc/"
 fi
+
+#-------------------------------------------------------------------------------------------
+## make files required for intrinsic connectivity modeling
+## 1. rp_01_reorient.csv -- creates csv file of 6 movement params [trans_x, trans_y, trans_Z, rot_x, rot_y, rot_z], extracted from fmriprep confounds files. Placed in plip preproc directory. 
+## 2. spikes/outlier volumes -- creates .mat file (named spike_regressors_VAR1_1FD2.mat) containing array named 'spike_regressors)'
+
+######## BL 
+######## con task 
+con_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-BL/func/sub-"${subject}"_ses-BL_task-con_desc-confounds_timeseries.tsv
+confounds_filtered_con="$local_plipproject_dir/processed/BL/${subject}/func/conscious/preproc/confounds_filtered.mat"
+
+if [ -f "$con_tsv" ] && [ -f "$confounds_filtered_con" ]; then
+	python make_ic_regressors.py "$con_tsv" "$confounds_filtered_con"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/BL/${subject}/func/conscious/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/BL/${subject}/func/conscious/preproc/"
+
+######## noncon task 
+noncon_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-BL/func/sub-"${subject}"_ses-BL_task-noncon_desc-confounds_timeseries.tsv
+confounds_filtered_noncon="$local_plipproject_dir/processed/BL/${subject}/func/nonconscious/preproc/confounds_filtered.mat"
+
+if [ -f "$noncon_tsv" ] && [ -f "$confounds_filtered_noncon" ]; then
+	python make_ic_regressors.py "$noncon_tsv" "$confounds_filtered_noncon"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/BL/${subject}/func/nonconscious/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/BL/${subject}/func/nonconscious/preproc/"
+
+######## gonogo task 
+gng_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-BL/func/sub-"${subject}"_ses-BL_task-gonogo_desc-confounds_timeseries.tsv
+confounds_filtered_gonogo="$local_plipproject_dir/processed/BL/${subject}/func/gonogo/preproc/confounds_filtered.mat"
+
+if [ -f "$gng_tsv" ] && [ -f "$confounds_filtered_gonogo" ]; then
+	python make_ic_regressors.py "$gonogo_tsv" "$confounds_filtered_gonogo"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/BL/${subject}/func/gonogo/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/BL/${subject}/func/gonogo/preproc/"
+
+######## emoreg task 
+emoreg_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-BL/func/sub-"${subject}"_ses-BL_task-emoreg_desc-confounds_timeseries.tsv
+confounds_filtered_emoreg="$local_plipproject_dir/processed/BL/${subject}/func/emoreg/preproc/confounds_filtered.mat"
+
+if [ -f "$emoreg_tsv" ] && [ -f "$confounds_filtered_emoreg" ]; then
+	python make_ic_regressors.py "$emoreg_tsv" "$confounds_filtered_emoreg"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/BL/${subject}/func/emoreg/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/BL/${subject}/func/emoreg/preproc/"
+
+######## emocon task 
+emocon_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-BL/func/sub-"${subject}"_ses-BL_task-emocon2_desc-confounds_timeseries.tsv
+confounds_filtered_emocon="$local_plipproject_dir/processed/BL/${subject}/func/emocon/preproc/confounds_filtered.mat"
+
+if [ -f "$emocon_tsv" ] && [ -f "$confounds_filtered_emocon" ]; then
+	python make_ic_regressors.py "$emocon_tsv" "$confounds_filtered_emocon"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/BL/${subject}/func/emocon/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/BL/${subject}/func/emocon/preproc/"
+
+
+
+
+######## ETX 
+######## con task 
+con_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-ETX/func/sub-"${subject}"_ses-ETX_task-con_desc-confounds_timeseries.tsv
+confounds_filtered_con="$local_plipproject_dir/processed/ETX/${subject}/func/conscious/preproc/confounds_filtered.mat"
+
+if [ -f "$con_tsv" ] && [ -f "$confounds_filtered_con" ]; then
+	python make_ic_regressors.py "$con_tsv" "$confounds_filtered_con"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/ETX/${subject}/func/conscious/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/ETX/${subject}/func/conscious/preproc/"
+
+######## noncon task 
+noncon_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-ETX/func/sub-"${subject}"_ses-ETX_task-noncon_desc-confounds_timeseries.tsv
+confounds_filtered_noncon="$local_plipproject_dir/processed/ETX/${subject}/func/nonconscious/preproc/confounds_filtered.mat"
+
+if [ -f "$noncon_tsv" ] && [ -f "$confounds_filtered_noncon" ]; then
+	python make_ic_regressors.py "$noncon_tsv" "$confounds_filtered_noncon"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/ETX/${subject}/func/nonconscious/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/ETX/${subject}/func/nonconscious/preproc/"
+
+######## gonogo task 
+gng_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-ETX/func/sub-"${subject}"_ses-ETX_task-gonogo_desc-confounds_timeseries.tsv
+confounds_filtered_gonogo="$local_plipproject_dir/processed/ETX/${subject}/func/gonogo/preproc/confounds_filtered.mat"
+
+if [ -f "$gng_tsv" ] && [ -f "$confounds_filtered_gonogo" ]; then
+	python make_ic_regressors.py "$gonogo_tsv" "$confounds_filtered_gonogo"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/ETX/${subject}/func/gonogo/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/ETX/${subject}/func/gonogo/preproc/"
+
+######## emoreg task 
+emoreg_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-ETX/func/sub-"${subject}"_ses-ETX_task-emoreg_desc-confounds_timeseries.tsv
+confounds_filtered_emoreg="$local_plipproject_dir/processed/ETX/${subject}/func/emoreg/preproc/confounds_filtered.mat"
+
+if [ -f "$emoreg_tsv" ] && [ -f "$confounds_filtered_emoreg" ]; then
+	python make_ic_regressors.py "$emoreg_tsv" "$confounds_filtered_emoreg"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/ETX/${subject}/func/emoreg/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/ETX/${subject}/func/emoreg/preproc/"
+
+######## emocon task 
+emocon_tsv="${local_fmriprep_dir}"/sub-"${subject}"/ses-ETX/func/sub-"${subject}"_ses-ETX_task-emocon2_desc-confounds_timeseries.tsv
+confounds_filtered_emocon="$local_plipproject_dir/processed/ETX/${subject}/func/emocon/preproc/confounds_filtered.mat"
+
+if [ -f "$emocon_tsv" ] && [ -f "$confounds_filtered_emocon" ]; then
+	python make_ic_regressors.py "$emocon_tsv" "$confounds_filtered_emocon"
+fi
+
+mv "rp_01_reorient.csv" "$local_plipproject_dir/processed/ETX/${subject}/func/emocon/preproc/"
+mv "spike_regressors_VAR1_1FD2.mat" "$local_plipproject_dir/processed/ETX/${subject}/func/emocon/preproc/"
+
+
+
 #-------------------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------------------
 ## Miscellaneous / Unused

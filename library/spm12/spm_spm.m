@@ -696,9 +696,16 @@ end
     
 %-Delete the standardised residual files
 %--------------------------------------------------------------------------
-fres = cellstr(spm_select('FPList',SPM.swd,'^ResI_.{4}\..{3}$'));
-for i=1:numel(fres)
-    spm_unlink(fres{i});
+%% AJK Edits
+if strcmp(getenv('SPM_PROCESSING'), 'intrinsic_connectivity')
+    disp("Will not delete residuals for intrinsic connectivity!")
+else
+    disp("Deleting residuals images")
+%%
+    fres = cellstr(spm_select('FPList',SPM.swd,'^ResI_.{4}\..{3}$'));
+    for i=1:numel(fres)
+        spm_unlink(fres{i});
+    end
 end
 
 

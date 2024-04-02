@@ -59,18 +59,19 @@ def merge_images(directory, regex, dst):
     fsl_in_docker("fslmerge", "-t", dst, *src)
     for f in src:
         os.remove(f)
-        os.remove(f.parent / f.name.replace(".img", ".hdr"))
+        # os.remove(f.parent / f.name.replace(".img", ".hdr"))
 
 
 def ic_est(ic_dir, filename, TR, config):
     """
-    Runs SPM8 1st level modeling on the concatenated image.  The SPM_PROCESSING
+    Runs SPM12 1st level modeling on the concatenated image.  The SPM_PROCESSING
     flag means the residual images are saved during modeling
     """
 
     # HACK: this is needed to not delete the residuals
     run_matlab(config, "ic_est", ic_dir, filename, TR,
                env={"SPM_PROCESSING": "intrinsic_connectivity"})
+
 
 
 def generate_residual_image(ic_dir, filename, TR, config):
@@ -80,7 +81,7 @@ def generate_residual_image(ic_dir, filename, TR, config):
     ic_est(ic_dir, filename, TR, config)
 
     # Collapse from individual residual files to 4d nifti
-    merge_images(ic_dir, "ResI_*.img", ic_dir / "ResidualImages.nii")
+    merge_images(ic_dir, "ResI_*.nii", ic_dir / "ResidualImages.nii")
 
     filt(
         ic_dir / "ResidualImages.nii",
