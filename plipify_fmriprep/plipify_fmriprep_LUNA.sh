@@ -7,15 +7,16 @@
 ## 3. Cuts 3 dummy scans from task-series.
 ## 3. Creates onset.csv files for 1st level modeling from psychopy log files on the lab's Box. Copies these files to plip.
 ## 4. confounds_tsv2mat.py Makes nuisance regressors derived from fmriprep confounds.tsv files. Filters the full .tsv for the required nuisance regressors and appends motion_outlier columns (also adds the 1 before/2 after detected spikes), removes first 3 rows for dummy-scans, and converts to .mat file for use by plip [? may need to rename confounds or spike_regressors_wFD.mat or edit plip to expect different names.] To edit the nuisance regressors for 1stlevels, edit or create-new nuisance_params_XX.txt contained within "<local_pliproot_dir>/plipify_fmriprep/"
+## 5. Makes regressors required for intrinsic connectivity analysis
 
 ## Updates 21-March-2-024
 ## Makes files required for intrinsic connectivity modeling, and places in relevant plip directories.
 
 #-------------------------------------------------------------------------------------------
 ## User Inputs
-Project_name="TIRED"
-subject="TIRED335"
-local_plipproject_dir="/Users/copsynsleeplab/Desktop/TIRED-plip/"
+Project_name="LUNA"
+subject="LUNA216"
+local_plipproject_dir="/Users/copsynsleeplab/Desktop/LUNA-plip/"
 local_fmriprep_dir="/Users/copsynsleeplab/Desktop/fmriprep-22.1.1/"
 local_pliproot_dir="/Users/copsynsleeplab/plip-master/"
 MATLAB_DIR=/Applications/MATLAB_R2022b.app/bin
@@ -44,43 +45,43 @@ mkdir -p "${local_fmriprep_dir}/sub-${subject}/ses-ETX/beh/"
 mkdir -p "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 
 ## reports -- this requires 2factor authentication for now.
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}.html" ${local_fmriprep_dir}
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/figures/*" "${local_fmriprep_dir}/sub-${subject}/figures/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}.html" ${local_fmriprep_dir}
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/figures/*" "${local_fmriprep_dir}/sub-${subject}/figures/"
 ## Raw anat
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/sub-${subject}/ses-BL/anat/sub-${subject}_ses-BL_T1w.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/anat/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/sub-${subject}/ses-ETX/anat/sub-${subject}_ses-ETX_T1w.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/anat/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/sub-${subject}/ses-BL/anat/sub-${subject}_ses-BL_T1w.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/anat/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/sub-${subject}/ses-ETX/anat/sub-${subject}_ses-ETX_T1w.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/anat/"
 ## Preprocessed Tasks
 #### Con2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-con2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-con2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-con2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-con2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### Noncon2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-noncon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-noncon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-noncon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-noncon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### gonogo2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-gonogo2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-gonogo2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-gonogo2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-gonogo2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### emocon2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-emocon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-emocon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-emocon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-emocon2_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### emoreg
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-emoreg_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-emoreg_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-${subject}_ses-BL_task-emoreg_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-${subject}_ses-ETX_task-emoreg_space-MNI152NLin2009cAsym_res-2_desc-preproc_smoothed-6mm_bold.nii.gz" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 ## Confound Files
 #### Con2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-con2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-con2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-con2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-con2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### Noncon2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-noncon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-noncon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-noncon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-noncon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### gonogo2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-gonogo2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-gonogo2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-gonogo2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-gonogo2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### emocon2
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-emocon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-emocon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-emocon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-emocon2_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 #### emoreg
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-emoreg_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
-scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/TIRED/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-emoreg_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-BL/func/sub-"${subject}"_ses-BL_task-emoreg_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-BL/func/"
+scp -r adamkra@login.sherlock.stanford.edu:"/oak/stanford/groups/agoldpie/LUNA/derivatives/fmriprep-22.1.1/sub-${subject}/ses-ETX/func/sub-"${subject}"_ses-ETX_task-emoreg_desc-confounds_timeseries.tsv" "${local_fmriprep_dir}/sub-${subject}/ses-ETX/func/"
 
 #-------------------------------------------------------------------------------------------
 ## make new plip subject folders
@@ -89,7 +90,7 @@ mv "${local_plipproject_dir}/processed/BL/BL_NEWSUBJECT" "${local_plipproject_di
 cp -rv "${local_plipproject_dir}/NEW-PLIP-SUBJECT-TEMPLATE/ETX_NEWSUBJECT" "${local_plipproject_dir}/processed/ETX/"
 mv "${local_plipproject_dir}/processed/ETX/ETX_NEWSUBJECT" "${local_plipproject_dir}/processed/ETX/$subject"
 
-## Move and rename relevant images to TIRED-plip and use fslroi to remove the 3 dummy scans
+## Move and rename relevant images to LUNA-plip and use fslroi to remove the 3 dummy scans
 ## anat
 mkdir -p "${local_plipproject_dir}/raw/BL/${subject}/T1w_1mm/"
 cp "${local_fmriprep_dir}/sub-${subject}/ses-BL/anat/sub-${subject}_ses-BL_T1w.nii.gz" "${local_plipproject_dir}/raw/BL/${subject}/T1w_1mm/"
@@ -249,6 +250,7 @@ file_paths=("$BL_con_plip_connectivity/05b_smooth.nii.gz"
 	"$ETX_emocon_plip_modeling/05b_smooth.nii.gz"
 	)
 
+
 for file_path in "${file_paths[@]}"; do
     if [[ -e "$file_path" ]] && [[ $file_path == *.nii.gz ]]; then
     	echo "Unzipping ${file_path}"
@@ -263,7 +265,7 @@ done
 ## Create and move onset files to plip directories
 
 cd "/Users/copsynsleeplab/Desktop/code"
-./psychopy_parser_helper_ajk.sh "$subject" "$local_fmriprep_dir"
+./psychopy_parser_helper_ajk_LUNA.sh "$subject" "$local_fmriprep_dir"
 
 ## BL
 mkdir -p "${local_plipproject_dir}/button/${subject}/BL/conscious/onsets/"

@@ -52,6 +52,7 @@ def func_preproc(config_dir, session, subject, task):
 
     ## ajk-edit. can skip this if not doing activation(?)
     #func_model(config_dir, session, subject, task, "activation","05a_smooth.nii")
+
     func_model(config_dir, session, subject, task, "connectivity",
                "05b_smooth.nii")
 

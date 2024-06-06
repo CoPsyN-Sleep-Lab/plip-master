@@ -7,6 +7,7 @@
 ## 3. Cuts 3 dummy scans from task-series.
 ## 3. Creates onset.csv files for 1st level modeling from psychopy log files on the lab's Box. Copies these files to plip.
 ## 4. confounds_tsv2mat.py Makes nuisance regressors derived from fmriprep confounds.tsv files. Filters the full .tsv for the required nuisance regressors and appends motion_outlier columns (also adds the 1 before/2 after detected spikes), removes first 3 rows for dummy-scans, and converts to .mat file for use by plip [? may need to rename confounds or spike_regressors_wFD.mat or edit plip to expect different names.] To edit the nuisance regressors for 1stlevels, edit or create-new nuisance_params_XX.txt contained within "<local_pliproot_dir>/plipify_fmriprep/"
+## 5. Makes regressors required for intrinsic connectivity analysis
 
 ## Updates 21-March-2-024
 ## Makes files required for intrinsic connectivity modeling, and places in relevant plip directories.
@@ -14,7 +15,7 @@
 #-------------------------------------------------------------------------------------------
 ## User Inputs
 Project_name="TIRED"
-subject="TIRED335"
+subject="TIRED017"
 local_plipproject_dir="/Users/copsynsleeplab/Desktop/TIRED-plip/"
 local_fmriprep_dir="/Users/copsynsleeplab/Desktop/fmriprep-22.1.1/"
 local_pliproot_dir="/Users/copsynsleeplab/plip-master/"
@@ -263,7 +264,7 @@ done
 ## Create and move onset files to plip directories
 
 cd "/Users/copsynsleeplab/Desktop/code"
-./psychopy_parser_helper_ajk.sh "$subject" "$local_fmriprep_dir"
+./psychopy_parser_helper_ajk_TIRED.sh "$subject" "$local_fmriprep_dir"
 
 ## BL
 mkdir -p "${local_plipproject_dir}/button/${subject}/BL/conscious/onsets/"

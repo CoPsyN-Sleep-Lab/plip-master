@@ -36,9 +36,6 @@ def setup_anat(config_dir, session, subject):
     anat_dir = paths.anat_path(root, session, subject)
 
 
-    #debug_log = logging.getLogger(f"DEBUGpreproc_{session}_{subject}")
-    #debug_log.info(f"The anat_dir is {anat_dir}")
-
     src = paths.raw_anat_path(root, session, subject, t1_type)
 
 
@@ -49,6 +46,6 @@ def setup_anat(config_dir, session, subject):
 
     # Reorient to match MNI image layout
     orig = anat_dir / "struct" / "orig.nii"
-    log.info(f"Reorienting {dst} to {orig}")
+    # log.info(f"Reorienting {dst} to {orig}")
     fsl_command('fslreorient2std', dst, orig)
     return src

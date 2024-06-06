@@ -1,7 +1,7 @@
 {
-    "root": "/users/copsynsleeplab/Desktop/TIRED-plip/",
-    "standard": "/users/copsynsleeplab/Desktop/TIRED-plip/processed/config/",
-    "subject_list": "/users/copsynsleeplab/Desktop/TIRED-plip/subject_list.csv",
+    "root": "/users/copsynsleeplab/Desktop/LUNA-plip/",
+    "standard": "/users/copsynsleeplab/Desktop/LUNA-plip/processed/config/",
+    "subject_list": "/users/copsynsleeplab/Desktop/LUNA-plip/subject_list.csv",
     "sessions": ["BL", "ETX"],
     "smooth_param": 6,
     "dof": 12,
@@ -9,7 +9,7 @@
     "spm_path": "/users/copsynsleeplab/plip-master/library/spm12/",
     "mask_dir": "/users/copsynsleeplab/plip-master/masks/plip/",
     "tasks": ["conscious", "nonconscious", "gonogo", "emocon", "emoreg"],
-    "ic_tasks": ["conscious", "nonconscious"],
+    "ic_tasks": ["conscious", "nonconscious", "emoreg"],
     "standardization": "/share/leanew1/Standardization/connhc_n50_dof6.csv",
     "environment": {
         "MATLAB_DIR": "/Applications/MATLAB_R2022b.app/bin",

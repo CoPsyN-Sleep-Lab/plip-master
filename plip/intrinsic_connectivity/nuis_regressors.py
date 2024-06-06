@@ -64,7 +64,7 @@ def var_spikes(spikes_path):
 
 def load_movement(movement_path):
     # NOTE: see if this can be a CSV instead
-    df = pd.read_csv(movement_path, sep="  ", header=None, engine="python")
+    # df = pd.read_csv(movement_path, sep="  ", header=None, engine="python")
 
     ## AJK EDIT using csv
     df = pd.read_csv(movement_path, sep=",", header=None, engine="python")
@@ -79,10 +79,22 @@ def load_movement(movement_path):
     return moves
 
 
+# def padded_values(values, pad_num, total_num, index):
+#     pad_values = np.zeros(total_num)
+#     start = pad_num * index
+#     end = pad_num * (index + 1)
+#     pad_values[start:end] = values
+#     return pad_values
+
+## AJK EDITS: pad_num is a TUPLE (task_vols) and allow for different task-lengths
 def padded_values(values, pad_num, total_num, index):
     pad_values = np.zeros(total_num)
-    start = pad_num * index
-    end = pad_num * (index + 1)
+    if index == 0:
+        start = 0
+        end = pad_num[0][1] ## first task
+    elif index > 0:
+        start = sum(task[1] for task in pad_num[:index])
+        end = start + pad_num[index][1]
     pad_values[start:end] = values
     return pad_values
 
@@ -136,12 +148,13 @@ def nuis_regressors(movement_paths, spikes_paths, spmmat_paths, ic_tasks,
     movement = [load_movement(path) for path in movement_paths]
     df = pd.concat(movement, axis=0, sort=False)
     df.reset_index(drop=True, inplace=True)
-    ic_vols = len(ic_tasks) * task_vols
+    ## AJK EDIT (sum volumes of all tasks)
+    # ic_vols = len(ic_tasks) * task_vols
+    ic_vols = sum(task[1] for task in task_vols)
 
     task_info = zip(ic_tasks, spikes_paths, spmmat_paths)
     for i, (task, spikes_fp, spmmat) in enumerate(task_info):
         stimuli = model_regressors(spmmat)
-        # FIXME: make sure the spikes VAR1_1FD2 file always exist!
         if spikes_fp.is_file():
             spikes = var_spikes(spikes_fp)
             regressors = pd.concat([stimuli, spikes], axis=1)
@@ -150,7 +163,9 @@ def nuis_regressors(movement_paths, spikes_paths, spmmat_paths, ic_tasks,
         for col in regressors.columns:
             df[f"{task}_{col}"] = padded_values(regressors[col], task_vols,
                                                 ic_vols, i)
-        df[task] = padded_values([1] * task_vols, task_vols, ic_vols, i)
+        ## AJK EDIT
+        # df[task] = padded_values([1] * task_vols, task_vols, ic_vols, i)
+        df[task] = padded_values([1]*task_vols[i][1], task_vols, ic_vols, i)
     return df
 
 

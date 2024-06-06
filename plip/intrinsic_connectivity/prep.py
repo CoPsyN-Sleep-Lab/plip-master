@@ -15,7 +15,11 @@ def setup_ic(config_dir, session, subject):
 
     ic_dir = paths.ic_path(root, session, subject)
     plipos.makedirs(ic_dir)
-    task_vols = task_attr(config_dir / "tasks.json", ic_tasks, "volumes").pop()
+    ## AJK EDIT
+    # task_vols = task_attr(config_dir / "tasks.json", ic_tasks, "volumes").pop()
+    ## AJK EDIT: make dictionary of tasks-volumes and convert to tuple to preserve order and indexing
+    task_vols_dict = {task: config_get(config_dir / "tasks.json", [task, "volumes"]) for task in ic_tasks}
+    task_vols = tuple(task_vols_dict.items())
 
     # Concatenate tasks together
     fmri_paths = ic.nuis_regressors.ic_fmri_inputs(root, session, subject,
@@ -48,8 +52,9 @@ def incomplete_inputs(config_dir, session, subject):
     if len(task_attr(task_config, ic_tasks, "tr")) != 1:
         is_incomplete.append("Inconsistent TR between ic_tasks")
 
-    if len(task_attr(task_config, ic_tasks, "volumes")) != 1:
-        is_incomplete.append("Inconsistent volumes between ic_tasks")
+        ### AJK EDIT -- commented out: IC should allow different task lengths
+    # if len(task_attr(task_config, ic_tasks, "volumes")) != 1:
+        # is_incomplete.append("Inconsistent volumes between ic_tasks")
 
     return is_incomplete
 

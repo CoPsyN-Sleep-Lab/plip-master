@@ -5,8 +5,7 @@ import pandas as pd
 from pathlib import Path
 
 import plip.utils.os as plipos
-from plip.definitions import (PLIP_ROOT, realign_path, st_path, warp_path,
-                              smooth_path_b)
+from plip.definitions import (PLIP_ROOT, realign_path, st_path, warp_path, smooth_path_b)
 from plip.utils.fsl_commands import fsl_warp
 from plip.utils.run_matlab import run_matlab
 import plip.utils.paths as paths
